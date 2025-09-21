@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="教程资源,AI学习,人工智能教程,Python编程,Java编程,Vue教程,渗透测试教程,网络安全学习,取证技术,刑侦技术,国学学习,风水八字,奇门遁甲,编程教程,面试题,学习资料,技术文档,行业报告,杨CC教程,技术培训,在线学习">
+    <title>杨CC资源分享站-教程资源</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/zong.css">
+    <!-- <script defer src="assets/css/zong.css"></script> -->
+    <script defer src="https://01987425-44bc-77e0-a189-165a6b6e93b4.ustat1.com/ustat.js"></script>
+    <link rel="stylesheet" href="assets/css/main1.css">
+</head>
+<body>
+    <!-- 悬浮装饰图形 -->
+    <!-- <div class="floating-shape" style="width: 150px; height: 150px; top: 10%; left: 5%; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"></div>
+    <div class="floating-shape" style="width: 100px; height: 100px; top: 60%; right: 10%; border-radius: 50%;"></div>
+    <div class="floating-shape" style="width: 120px; height: 80px; bottom: 20%; left: 20%;"></div> -->
+
+    <div class="floating-shape triangle" style="top: 20%; left: 5%; animation-delay: 0s;"></div>
+    <div class="floating-shape hexagon" style="top: 60%; left: 90%; animation-delay: 2s;"></div>
+    <div class="floating-shape triangle" style="top: 40%; left: 85%; animation-delay: 4s; transform: rotate(180deg);"></div>
+    <div class="floating-shape hexagon" style="top: 70%; left: 10%; animation-delay: 6s;"></div>
+    <!-- 固定顶部导航栏 -->
+    <nav class="navbar">
+        <div class="logo" data-text="杨CC资源分享站">杨CC资源分享站</div>
+        <div class="nav-links">
+            <a href="./index.html" class="nav-link">首页</a>
+            <a href="./penetration.html" class="nav-link">渗透工具</a>
+            <a href="./games.html" class="nav-link">游戏资源</a>
+            <a href="./learning.html"  class="nav-link active">教程资源</a>
+            <a href="./other_resources.html" class="nav-link">其他资源</a>
+            <a href="https://ycc77.com" class="logo">杨CC 技术录</a>
+        </div>
+        <div class="hamburger">
+            <!-- <i class="fas fa-bars"></i> -->
+        </div>
+    </nav>
+
+    <!-- 学习资源分类区 -->
+    <main class="main-content">
+        <h1 class="page-title">教程资源<hr class="cyber-hr"/><br></h1>
+        <div class="category-grid">
+            <!-- AI学习卡片 -->
+            <div class="category-card">
+                <i class="fas fa-code category-icon"></i>
+                <h2 class="category-title">AI学习</h2>
+                <p class="category-desc">包含多种资源的整合,学习资料，AI面试题,AI训练等</p>
+                <a href="#programming-languages" class="category-btn show-subcategory">查看详情</a>
+            </div>
+            <!-- 取证学习卡片 -->
+            <div class="category-card">
+                <i class="fas fa-book category-icon"></i>
+                <h2 class="category-title">取证学习</h2>
+                <p class="category-desc">涵盖取证技术文档\行业报告\刑侦技术等各类资源</p>
+                <a href="#e-books" class="category-btn show-subcategory">查看详情</a>
+            </div>
+            <!-- 编程学习卡片 -->
+            <div class="category-card">
+                <i class="fas fa-book category-icon"></i>
+                <h2 class="category-title">编程学习</h2>
+                <p class="category-desc">涵盖多种编程技术,当前已经包括:Python\Java\Vue，后续请等待更新</p>
+                <a href="#bian-cheng" class="category-btn show-subcategory">查看详情</a>
+            </div>
+            <!-- 渗透学习卡片 -->
+            <div class="category-card">
+                <i class="fas fa-code-branch category-icon"></i>
+                <h2 class="category-title">渗透学习</h2>
+                <p class="category-desc">提供渗透小白所学所有资料,以及渗透中包含的几乎所有类目</p>
+                <a href="#source-code" class="category-btn show-subcategory">查看详情</a>
+            </div>
+            <!-- 国学学习卡片 -->
+            <div class="category-card">
+                <i class="fas fa-unlock category-icon"></i>
+                <h2 class="category-title">国学学习</h2>
+                <p class="category-desc">包含风水\六爻\梅花\符箓\奇门遁等...多种</p>
+                <a href="#cracking" class="category-btn show-subcategory">查看详情</a>
+            </div>
+            <!-- 其他教程板块卡片 -->
+            <div class="category-card">
+                <i class="fas fa-graduation-cap category-icon"></i>
+                <h2 class="category-title">其他教程板块</h2>
+                <p class="category-desc">此版块待定.</p>
+                <a href="#tutorials" class="category-btn show-subcategory">查看详情</a>
+            </div>
+        </div>
+        <!-- 二级分类内容区 -->
+        <div class="subcategory-container">
+            <div id="programming-languages" class="subcategory-content">
+                <h3>AI资源详情</h3>
+                <a href="https://pan.quark.cn/s/aa2b078d4577"><div class="download-item">deepseek零基础AI编程课</div></a>
+                <a href="https://pan.quark.cn/s/82c535ddd373"><div class="download-item">从零开始大模型开发与微调基于PyTorch与ChatGLM</div></a>
+                <a href="https://pan.quark.cn/s/f5539b9764d4"><div class="download-item">从零开始大模型开发与微调基于PyTorch与ChatGLM.pdf</div></a>
+                <a href="https://pan.quark.cn/s/b2c068d3e507"><div class="download-item">DeepSeek+7大热点+全套提示词零基础入门-101页.pdf</div></a>
+                <a href="https://pan.quark.cn/s/17fc47f248ea"><div class="download-item">DeepSeek+DeepResearch：让科研像聊天一样简单.pdf</div></a>
+                <a href="https://pan.quark.cn/s/52643f5d1c10"><div class="download-item">DeepSeek从入门到精通.pdf</div></a>
+                <a href="https://pan.quark.cn/s/0e13dc0cca35"><div class="download-item">DeepSeek赋能职场.pdf</div></a>
+                <a href="https://pan.quark.cn/s/67313f87d67e"><div class="download-item">Deepseek精通和AI办公提效.pptx</div></a>
+                <a href="https://pan.quark.cn/s/b128b73fba15"><div class="download-item">DeepSeek与AI幻觉.pdf</div></a>
+                <a href="https://pan.quark.cn/s/24391bfc6f3f"><div class="download-item">DeepSeek指导手册从入门到精通.pdf</div></a>
+                <a href="https://pan.quark.cn/s/d57f97f9b84d"><div class="download-item">大规模语言模型：从理论到实践.pdf</div></a>
+                <a href="https://pan.quark.cn/s/a2add046073e"><div class="download-item">大模型的本地部署和微调.pptx</div></a>
+                <a href="https://pan.quark.cn/s/ea7f36079fb8"><div class="download-item">大模型应用开发极简入门：基于GPT-4和ChatGPT.pdf</div></a>
+                <a href="https://pan.quark.cn/s/e4223cd5aebf"><div class="download-item">大语言模型（LLM）新手入门指南（英译中）-英伟达.pdf</div></a>
+                <a href="https://pan.quark.cn/s/d98c9a4b6ce0"><div class="download-item">基于GPT-3、ChatGPT、GPT-4等Transformer架构的自然语言处理.pdf</div></a>
+                <a href="https://pan.quark.cn/s/1319aa5bb58d"><div class="download-item">【大模型】ChatGPT从入门到精通.pdf</div></a>
+                <a href="https://pan.quark.cn/s/b0ce2dcc7c2a"><div class="download-item">普通人如何抓住DeepSeek红利.pdf</div></a>
+                <h3>AI 面试题</h3>
+                <a href="https://pan.quark.cn/s/1b8aa3eb11fa"><div class="download-item">1-大模型（LLMs）基础面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/fa9f4e145f23"><div class="download-item">2-Layer normalization 篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/0c384812654c"><div class="download-item">3-LLMs 激活函数篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/87081fce0195"><div class="download-item">4-Attention 升级面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/c5d6d9a93193"><div class="download-item">5-transformers 操作篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/780cc9e45957"><div class="download-item">6-LLMs 损失函数篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/030de14f580f"><div class="download-item">7-相似度函数篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/809eee7232bf"><div class="download-item">8-大模型（LLMs）进阶面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/d719a7811118"><div class="download-item">9-大模型（LLMs）微调面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/a3175cdad091"><div class="download-item">10-LLMs 训练经验帖.pdf</div></a>
+                <a href="https://pan.quark.cn/s/8912f2632fe6"><div class="download-item">11-大模型（LLMs）langchain 面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/46ef8cf2c0e5"><div class="download-item">12-多轮对话中让AI保持长期记忆的8种优化方式篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/fe640f7d1478"><div class="download-item">13-基于langchain RAG问答应用实战.pdf</div></a>
+                <a href="https://pan.quark.cn/s/8cf925956716"><div class="download-item">14-基于LLM+向量库的文档对话 经验面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/cf8d8a42d61e"><div class="download-item">15-大模型 RAG 经验面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/0ac140c0d874"><div class="download-item">16-LLM文档对话 —— pdf解析关键问题.pdf</div></a>
+                <a href="https://pan.quark.cn/s/f635d09b7854"><div class="download-item">17-大模型（LLMs）RAG 版面分析——表格识别方法篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/99e797fcd70b"><div class="download-item">18-大模型（LLMs）RAG 版面分析——文本分块面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/0aae923bde75"><div class="download-item">19-大模型外挂知识库优化——如何利用大模型辅助召回？.pdf</div></a>
+                <a href="https://pan.quark.cn/s/62983f1bd435"><div class="download-item">20-大模型外挂知识库优化——负样本样本挖掘篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/e05256bd5af7"><div class="download-item">21-RAG（Retrieval-Augmented Generation）评测面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/ffa4d00f895e"><div class="download-item">22-检索增强生成(RAG) 优化策略篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/3cec61881d6c"><div class="download-item">23-大模型（LLMs）RAG —— 关键痛点及对应解决方案.pdf</div></a>
+                <a href="https://pan.quark.cn/s/0bfa780d1932"><div class="download-item">24-大模型（LLMs）RAG 优化策略 —— RAG-Fusion篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/7eb6c79dd674"><div class="download-item">25-Graph RAG 面 — 一种 基于知识图谱的大模型检索增强实现策略.pdf</div></a>
+                <a href="https://pan.quark.cn/s/8c251f611007"><div class="download-item">26-大模型（LLMs）参数高效微调(PEFT) 面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/9a2bffee5b92"><div class="download-item">27-适配器微调（Adapter-tuning）篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/af4983dd41a7"><div class="download-item">28-提示学习（Prompting）篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/f8c19304b932"><div class="download-item">29-LoRA 系列篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/7bce39d237a5"><div class="download-item">30-如何使用 PEFT库 中 LoRA？.pdf</div></a>
+                <a href="https://pan.quark.cn/s/b83c4724ece2"><div class="download-item">31-大模型（LLMs）推理面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/3f3c497b1716"><div class="download-item">33-增量预训练（Pretrain）样本拼接篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/7511491dab17"><div class="download-item">34-基于lora的llama2二次预训练.pdf</div></a>
+                <a href="https://pan.quark.cn/s/9bfe1dc50ff1"><div class="download-item">35-大模型（LLMs）评测面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/b68d83e3fe53"><div class="download-item">36-大模型（LLMs）强化学习面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/8e73ad514546"><div class="download-item">37-大模型（LLMs）强化学习——RLHF及其变种面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/c109533278ec"><div class="download-item">38-大模型（LLMs）强化学习—— PPO 面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/9e8667ed7c08"><div class="download-item">39-强化学习在自然语言处理下的应用篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/a93ace90ec42"><div class="download-item">40-大模型（LLMs）训练集面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/a145ac58ba73"><div class="download-item">41-大模型（LLMs）LLM生成SFT数据方法面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/1c2eca9aa941"><div class="download-item">42-大模型（LLMs）显存问题面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/06b660b4f5c5"><div class="download-item">43-显存优化策略篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/87ec47436d25"><div class="download-item">44-大模型（LLMs）分布式训练面.pdf</div></a>
+                <a href="https://pan.quark.cn/s/17a661e27640"><div class="download-item">45-图解分布式训练（一） —— 流水线并行（Pipeline Parallelism）.pdf</div></a>
+                <a href="https://pan.quark.cn/s/f530bfde2b57"><div class="download-item">46-图解分布式训练（二） —— nn.DataParallel篇.pdf</div></a>
+                <a href="https://pan.quark.cn/s/06b13b48a37f"><div class="download-item">47-图解分布式训练（三） —— nn.parallel.DistributedDataParallel.pdf</div></a>
+                <a href="https://pan.quark.cn/s/f34fc2e3e642"><div class="download-item">48-图解分布式训练（四） —— torch.multiprocessing 详细解析.pdf</div></a>
+                <a href="https://pan.quark.cn/s/630720fcd3d2"><div class="download-item">49-图解分布式训练（五） —— AMP混合精度训练 详细解析.pdf</div></a>
+                <a href="https://pan.quark.cn/s/1fb17e23bf7d"><div class="download-item">50-图解分布式训练（六）—— Pytorch的 DeepSpeed 详细解析.pdf</div></a>
+                <a href="https://pan.quark.cn/s/7badebaa98b8"><div class="download-item">51-图解分布式训练（七）—— accelerate 分布式训练 详细解析.pdf</div></a>
+                <a href="https://pan.quark.cn/s/3c9c80b7f0b7"><div class="download-item">52-图解分布式训练（八）—— ZeRO 学习.pdf</div></a>
+            </div>
+            
+            <div id="e-books" class="subcategory-content">
+                <h3>刑侦类-下方有取证类书籍</h3>
+                <a href="https://pan.quark.cn/s/6d88da96ffab"><div class="download-item">用刑侦科学破解致命罪案</div></a>
+                <a href="https://pan.quark.cn/s/7c28366b16f0"><div class="download-item">刑侦因果扫描版</div></a>
+                <a href="https://pan.quark.cn/s/21dae4d22113"><div class="download-item">刑侦中的逻辑应用</div></a>
+                <a href="https://pan.quark.cn/s/896e13b253d8"><div class="download-item">刑侦一科下</div></a>
+                <a href="https://pan.quark.cn/s/912fe8223c0e"><div class="download-item">刑侦一科上</div></a>
+                <a href="https://pan.quark.cn/s/d99177be96f5"><div class="download-item">刑侦实验室犯罪现场真相解密</div></a>
+                <a href="https://pan.quark.cn/s/6d5b0cbe120e"><div class="download-item">刑侦日记 下</div></a>
+                <a href="https://pan.quark.cn/s/e35c12f8ed49"><div class="download-item">刑侦日记 上</div></a>
+                <a href="https://pan.quark.cn/s/ef62818167f9"><div class="download-item">一个刑警的日子：刑警生活实录</div></a>
+                <a href="https://pan.quark.cn/s/3664e6a8e734"><div class="download-item">刑侦前言</div></a>
+                <a href="https://pan.quark.cn/s/0b4b7e2f9bc0"><div class="download-item">刑侦破案报告 _ 选</div></a>
+                <a href="https://pan.quark.cn/s/ddad474d204b"><div class="download-item">刑侦高科技犯罪百科全书</div></a>
+                <a href="https://pan.quark.cn/s/3b6e13550c15"><div class="download-item">刑侦科长</div></a>
+                <a href="https://pan.quark.cn/s/74d88789228c"><div class="download-item">刑侦方略新探</div></a>
+                <a href="https://pan.quark.cn/s/e0948b578da4"><div class="download-item">刑侦典型案例评析</div></a>
+                <a href="https://pan.quark.cn/s/75a949d662ba"><div class="download-item">刑事侦查学 (第二版)</div></a>
+                <a href="https://pan.quark.cn/s/a0ffe154c886"><div class="download-item">刑事侦查学</div></a>
+                <a href="https://pan.quark.cn/s/80c923e7b7d"><div class="download-item">刑侦手记</div></a>
+                <a href="https://pan.quark.cn/s/fcdc7d6438bd"><div class="download-item">数据恢复技术深度解密 (第二版)</div></a>
+                <a href="https://pan.quark.cn/s/62246e43f67f"><div class="download-item">刑侦科学</div></a>
+                <a href="https://pan.quark.cn/s/52ba477b984"><div class="download-item">判罪者 _ 一线法医的雄安刑侦笔记</div></a>
+                <a href="https://pan.quark.cn/s/817bb285784c"><div class="download-item">京城神探刑侦档案</div></a>
+                <a href="https://pan.quark.cn/s/22a91912b9b9"><div class="download-item">侯大利刑侦笔记 1-7</div></a>
+                <a href="https://pan.quark.cn/s/8a65ab9f6c93"><div class="download-item">冰血：零下 30 度的刑侦现场</div></a>
+                <a href="https://pan.quark.cn/s/c912b86e6a08"><div class="download-item">罪案现场：你所不知道的刑侦 3</div></a>
+                <a href="https://pan.quark.cn/s/5cf47802da3c"><div class="download-item">罪案现场：你所不知道的刑侦 2</div></a>
+                <a href="https://pan.quark.cn/s/f93613d41215"><div class="download-item">罪案现场：你所不知道的刑侦</div></a>
+                <a href="https://pan.quark.cn/s/5170b6fac118"><div class="download-item">中国刑侦测谎大揭秘</div></a>
+                <a href="https://pan.quark.cn/s/d75c78dad7b6"><div class="download-item">我的刑侦笔记</div></a>
+                <a href="https://pan.quark.cn/s/2cbddd4088f5"><div class="download-item">中国刑侦 1 号案</div></a>
+            </div>
+            
+            <div id="source-code" class="subcategory-content">
+                <div class="sai_bo_h2">
+                    <span data-text="当前已经包含:历史黑客事件 - 从0开始学习渗透 - Web安全 - 渗透编程 - 逆向 - 加解密 - CTF - 等">
+                        当前已经包含:历史黑客事件 - 从0开始学习渗透 - Web安全 - 渗透编程 - 逆向 - 加解密 - CTF - 等
+                    </span>
+                </div>
+                <h3>渗透-历史黑客事件</h3>
+                <a href="https://pan.quark.cn/s/f1e52198bd9b"><div class="download-item">网络战争：颠覆商业世界的黑客事件</div></a>
+                <a href="https://pan.quark.cn/s/0b2ebd3d5944"><div class="download-item">汽车黑客大曝光</div></a>
+                <a href="https://pan.quark.cn/s/01954e43c246"><div class="download-item">灰帽黑客 (第四版)</div></a>
+                <a href="https://pan.quark.cn/s/435dbe07ba06"><div class="download-item">黑客简史：棱镜中的帝国</div></a>
+                <a href="https://pan.quark.cn/s/e16a796d8e44"><div class="download-item">黑客_网络社会的流浪者</div></a>
+                <a href="https://pan.quark.cn/s/76607bfb52da"><div class="download-item">黑客计算机革命的英雄</div></a>
+                <h3>渗透-从0开始学习</h3>
+                <a href="https://pan.quark.cn/s/590cbc7e4097"><div class="download-item">网站渗透测试实战入门</div></a>
+                <a href="https://pan.quark.cn/s/a2cfedfab697"><div class="download-item">网络渗透测试：保护网络安全的技术 \ 工具和过程</div></a>
+                <a href="https://pan.quark.cn/s/c144e5fd9928"><div class="download-item">网络和系统管理员，Web 安全指南</div></a>
+                <a href="https://pan.quark.cn/s/03fd3196d329"><div class="download-item">渗透测试完全初学者指南</div></a>
+                <a href="https://pan.quark.cn/s/7f6bc61bdf77"><div class="download-item">物联网渗透测试</div></a>
+                <a href="https://pan.quark.cn/s/c20d9e431061"><div class="download-item">专业渗透测试第二版</div></a>
+                <a href="https://pan.quark.cn/s/bae77915354c"><div class="download-item">渗透测试基础可拷性安全审计实践指南</div></a>
+                <a href="https://pan.quark.cn/s/4e881cf83a96"><div class="download-item">渗透测试实践指南：必知必会的工具与方法</div></a>
+                <a href="https://pan.quark.cn/s/3092f8e6dd02"><div class="download-item">渗透测试高手打造固若金汤的安全网络</div></a>
+                <a href="https://pan.quark.cn/s/8ed02b6ddb54"><div class="download-item">全面掌握 Web 服务安全性</div></a>
+                <a href="https://pan.quark.cn/s/e3d9e2b87ced"><div class="download-item">树莓派渗透测试实战</div></a>
+                <a href="https://pan.quark.cn/s/b867a0148b39"><div class="download-item">渗透测试基础教程</div></a>
+                <a href="https://pan.quark.cn/s/43a9936162bc"><div class="download-item">BackTRACK4 利用渗透测试保证系统安全</div></a>
+                <a href="https://pan.quark.cn/s/91942eb04825"><div class="download-item">社会工程学 3: 防范钓鱼欺诈</div></a>
+                <a href="https://pan.quark.cn/s/c6d9a8ae91a8"><div class="download-item">社会工程学 2: 解读肢体语言</div></a>
+                <a href="https://pan.quark.cn/s/455b533a54c4"><div class="download-item">社会工程学 1: 安全体系中的人性漏洞</div></a>
+                <a href="https://pan.quark.cn/s/773cb5310ead"><div class="download-item">内网安全工坊渗透测试实战指南</div></a>
+                <a href="https://pan.quark.cn/s/9e28dda3a05e"><div class="download-item">矛与盾：黑客就这几招</div></a>
+                <a href="https://pan.quark.cn/s/e6e74ceefe20"><div class="download-item">矛与盾：黑客攻防与脚本编程</div></a>
+                <a href="https://pan.quark.cn/s/45b0f0d7c692"><div class="download-item">漏洞利用及渗透测试基础版 (第二版)</div></a>
+                <a href="https://pan.quark.cn/s/1c5308d2f90a"><div class="download-item">精通渗透测试 (第三版)</div></a>
+                <a href="https://pan.quark.cn/s/17f9261d6c9d"><div class="download-item">解密家用路由器 0Day 漏洞挖掘技术</div></a>
+                <a href="https://pan.quark.cn/s/0b40fbbb4c84"><div class="download-item">精通 Metasploit 渗透测试 (第三版)</div></a>
+                <a href="https://pan.quark.cn/s/ce23954d200d"><div class="download-item">黑客社会工程学工坊演练</div></a>
+                <a href="https://pan.quark.cn/s/9eb016b2927b"><div class="download-item">黑客攻防入门秘籍</div></a>
+                <a href="https://pan.quark.cn/s/023c47a04b8e"><div class="download-item">黑客攻防从入门到精通：命令版</div></a>
+                <a href="https://pan.quark.cn/s/d61a45fa8309"><div class="download-item">黑客攻防技术宝典：WEB 实战篇 (第二版)</div></a>
+                <a href="https://pan.quark.cn/s/5faf928c581d"><div class="download-item">黑客攻防从入门到精通</div></a>
+                <a href="https://pan.quark.cn/s/03a75fc01e5f"><div class="download-item">黑客心理学：社会工程学原理</div></a>
+                <a href="https://pan.quark.cn/s/f3e24c4702ac"><div class="download-item">黑客攻防：WEB 安全实战详解</div></a>
+                <a href="https://pan.quark.cn/s/7561f1700fdf"><div class="download-item">黑客秘笈：渗透测试实用指南</div></a>
+                <a href="https://pan.quark.cn/s/bf8b37d510f9"><div class="download-item">黑客大曝光：无线网络安全</div></a>
+                <a href="https://pan.quark.cn/s/fd8a605153d4"><div class="download-item">黑客大曝光：恶意软件和 Rootkit 安全第二版</div></a>
+                <a href="https://pan.quark.cn/s/7728073207fd"><div class="download-item">黑客宝典：浏览器实战篇</div></a>
+                <a href="https://pan.quark.cn/s/f9878e67f219"><div class="download-item">黑客技术宝典：反病毒篇</div></a>
+                <a href="https://pan.quark.cn/s/8bb60f880b78"><div class="download-item">黑客大曝光：WEB 应用程序安全原书</div></a>
+                <a href="https://pan.quark.cn/s/fe11b6ce0932"><div class="download-item">黑客攻防技巧 - 随手查</div></a>
+                <a href="https://pan.quark.cn/s/6b616c3d7de6"><div class="download-item">黑客攻防技术宝典：IOS 实战篇</div></a>
+                <a href="https://pan.quark.cn/s/d692be82f4e1"><div class="download-item">WEB 应用安全机密与解决方案第二版</div></a>
+                <a href="https://pan.quark.cn/s/d7dcf8bdddf9"><div class="download-item">近源渗透测试</div></a>
+                <a href="https://pan.quark.cn/s/e73fa0777b46"><div class="download-item">构建安全 web 站点</div></a>
+                <a href="https://pan.quark.cn/s/a9200b843a99"><div class="download-item">使用低功耗设备进行破解和渗透测试</div></a>
+                <h3>渗透-WEB安全</h3>
+                <a href="https://pan.quark.cn/s/7309169e6664"><div class="download-item">Web 渗透技术与实战案例解析 (第二版)</div></a>
+                <a href="https://pan.quark.cn/s/0a4ff125d417"><div class="download-item">现代 WEB 应用安全指南</div></a>
+                <a href="https://pan.quark.cn/s/8b59740dbcd1"><div class="download-item">高度安全环境下的高级渗透测试</div></a>
+                <a href="https://pan.quark.cn/s/c5b935faa282"><div class="download-item">WEB 应用安全威胁与防治</div></a>
+                <a href="https://pan.quark.cn/s/78ffc218b10f"><div class="download-item">Web 站点安全与防火墙技术</div></a>
+                <a href="https://pan.quark.cn/s/b6c2056d44a3"><div class="download-item">Web 系统安全和渗透性测试基础</div></a>
+                <a href="https://pan.quark.cn/s/53d684137614"><div class="download-item">Web 应用安全权威指南</div></a>
+                <a href="https://pan.quark.cn/s/e5acc2ad5338"><div class="download-item">白帽子讲 WEB 安全</div></a>
+                <a href="https://pan.quark.cn/s/7f45609121eb"><div class="download-item">WEB 攻防之业务安全实战指南</div></a>
+                <a href="https://pan.quark.cn/s/0c9c98d3044a"><div class="download-item">WEB 入侵中的安全测试与对策</div></a>
+                <a href="https://pan.quark.cn/s/2d7c0fcb8836"><div class="download-item">WEB 服务安全</div></a>
+                <a href="https://pan.quark.cn/s/d97ed9486eb6"><div class="download-item">WEB 安全之强化学习与 GAN</div></a>
+                <a href="https://pan.quark.cn/s/d1c3d4793246"><div class="download-item">WEB 安全之机器学习入门</div></a>
+                <a href="https://pan.quark.cn/s/3c13c5798bd3"><div class="download-item">WEB 安全原理分析与实践</div></a>
+                <a href="https://pan.quark.cn/s/312e07f9b676"><div class="download-item">WEB 安全实践</div></a>
+                <a href="https://pan.quark.cn/s/4f83746d65d4"><div class="download-item">Web 应用安全权威指南</div></a>
+                <a href="https://pan.quark.cn/s/1a6d1261b0fd"><div class="download-item">WEB 渗透测试 - Kali Linux</div></a>
+                <a href="https://pan.quark.cn/s/7bdf9190d3c9"><div class="download-item">Web 安全设计之道</div></a>
+                <a href="https://pan.quark.cn/s/96db5c2cba34"><div class="download-item">Web 安全深度剖析</div></a>
+                <a href="https://pan.quark.cn/s/5ee62a319416"><div class="download-item">Web 前段黑客技术揭秘</div></a>
+                <a href="https://pan.quark.cn/s/d969358d6f5d"><div class="download-item">Web 安全漏洞原理及实战</div></a>
+                <a href="https://pan.quark.cn/s/dcef84d07a88"><div class="download-item">Web 安全开发指南</div></a>
+                <a href="https://pan.quark.cn/s/395f2e1f2153"><div class="download-item">Web 安全之深度学习</div></a>
+                <a href="https://pan.quark.cn/s/9c1aa639abbc"><div class="download-item">Web 安全之基础教程</div></a>
+                <a href="https://pan.quark.cn/s/7964fd9137a6"><div class="download-item">Web 安全工坊渗透测试实战指南</div></a>
+                <a href="https://pan.quark.cn/s/b897c72455ea"><div class="download-item">Web 安全防护指南基础</div></a>
+                <a href="https://pan.quark.cn/s/7d2c7458e55c"><div class="download-item">Web 安全测试之有效的安全测试</div></a>
+                <a href="https://pan.quark.cn/s/e035dd832525"><div class="download-item">Web 安全 \ 隐私和商务</div></a>
+                <a href="https://pan.quark.cn/s/8aac47b1212b"><div class="download-item">Web 安全测试</div></a>
+                <a href="https://pan.quark.cn/s/c120899432d4"><div class="download-item">Linux 黑客渗透测试揭秘</div></a>
+                <a href="https://pan.quark.cn/s/8004e6e0a55d"><div class="download-item">Web 服务安全技术与原理</div></a>
+                <a href="https://pan.quark.cn/s/0c2e1991d3bb"><div class="download-item">Metasploit 渗透测试手册</div></a>
+                <a href="https://pan.quark.cn/s/a1a650b286fb"><div class="download-item">0Day 安全第二版</div></a>
+                <a href="https://pan.quark.cn/s/2f6e4340514b"><div class="download-item">暗月内部学院资料</div></a>
+                <h3>渗透-渗透编程</h3>
+                <a href="https://pan.quark.cn/s/5b85f01b03f4"><div class="download-item">PHPWeb 安全开发实战</div></a>
+                <a href="https://pan.quark.cn/s/ea1c4adf4744"><div class="download-item">Python 渗透测试编程技术方法与实践</div></a>
+                <a href="https://pan.quark.cn/s/3e408c610471"><div class="download-item">python 渗透实战测试</div></a>
+                <a href="https://pan.quark.cn/s/79f2e9ce7807"><div class="download-item">Python 黑帽子：黑客与渗透测试编程之道</div></a>
+                <a href="https://pan.quark.cn/s/50d6fe6a4a0a"><div class="download-item">Python3 反爬虫原理与绕过</div></a>
+                <a href="https://pan.quark.cn/s/37fa6dc32e91"><div class="download-item">Python 渗透测试实战指南</div></a>
+                <a href="https://pan.quark.cn/s/19c4f657a92e"><div class="download-item">C++ 黑客编程解密与防范</div></a>
+                <a href="https://pan.quark.cn/s/6544bfa7848c"><div class="download-item">C++ 反编译与逆向分析技术揭秘</div></a>
+                <a href="https://pan.quark.cn/s/571bfbce63d3"><div class="download-item">Kali 渗透测试技术实战</div></a>
+                <a href="https://pan.quark.cn/s/bb5f517585bb"><div class="download-item">Kali 无线网络渗透测试详解</div></a>
+                <a href="https://pan.quark.cn/s/24ca399102cd"><div class="download-item">Nmap 渗透测试指南</div></a>
+                <a href="https://pan.quark.cn/s/06a77861eb19"><div class="download-item">kali 渗透测试的艺术</div></a>
+                <a href="https://pan.quark.cn/s/4569e1a436b7"><div class="download-item">Kali 高级渗透测试原书</div></a>
+                <a href="https://pan.quark.cn/s/5b148fe7c6b2"><div class="download-item">Kali 大揭秘，深入掌握渗透测试平台</div></a>
+                <a href="https://pan.quark.cn/s/d487f6126504"><div class="download-item">Kali 渗透测试实战.</div></a>
+                <a href="https://pan.quark.cn/s/9b43889f52b6"><div class="download-item">Klai 网络渗透测试实战指南</div></a>
+                <h3>渗透-逆向</h3>
+                <a href="https://pan.quark.cn/s/bf648bdc3a05"><div class="download-item">逆向工程核心原理</div></a>
+                <a href="https://pan.quark.cn/s/0126754cf01b"><div class="download-item">透视 java - 反编译 \ 修补和逆向工程技术</div></a>
+                <a href="https://pan.quark.cn/s/1181499eb95b"><div class="download-item">逆向工程实战</div></a>
+                <a href="https://pan.quark.cn/s/8cc5954d715a"><div class="download-item">逆向工程技术</div></a>
+                <a href="https://pan.quark.cn/s/909bcc1ce6bc"><div class="download-item">逆向工程解密</div></a>
+                <a href="https://pan.quark.cn/s/e28af2f8d11a"><div class="download-item">逆向工程权威指南</div></a>
+                <a href="https://pan.quark.cn/s/ba78bf86ca79"><div class="download-item">逆向工程技术综合实践</div></a>
+                <a href="https://pan.quark.cn/s/8bfdd04a9c54"><div class="download-item">逆向分析实战</div></a>
+                <a href="https://pan.quark.cn/s/01275c2cff3f"><div class="download-item">反编译技术与软件逆向分析</div></a>
+                <a href="https://pan.quark.cn/s/0229f3509e85"><div class="download-item">恶意软件 \RooTKIT 和僵尸网络</div></a>
+                <a href="https://pan.quark.cn/s/df87754135a8"><div class="download-item">恶意软件分析诀窍与工具箱</div></a>
+                <a href="https://pan.quark.cn/s/0b6af15d6677"><div class="download-item">MacOS 软件安全与逆向分析</div></a>
+                <a href="https://pan.quark.cn/s/ca5cb1bc8922"><div class="download-item">IOS 逆向工程 (第二版)</div></a>
+                <a href="https://pan.quark.cn/s/ea42aaacf4e4"><div class="download-item">android 软件安全与逆向分析</div></a>
+                <a href="https://pan.quark.cn/s/56ffef707e4f"><div class="download-item">安卓恶意代码分析与渗透测试</div></a>
+                <a href="https://pan.quark.cn/s/f7339de083b3"><div class="download-item">有趣的二进制：软件安全与逆向分析</div></a>
+                <h3>渗透-加解密</h3>
+                <a href="https://pan.quark.cn/s/b235709643ad"><div class="download-item">数学家间谍与黑客：密码与解码</div></a>
+                <a href="https://pan.quark.cn/s/d6d5e9f221ce"><div class="download-item">微软.net 加密与解密</div></a>
+                <a href="https://pan.quark.cn/s/6a6647f009f7"><div class="download-item">软件加密与解密</div></a>
+                <a href="https://pan.quark.cn/s/dec71b45d1ca"><div class="download-item">软件加密原理与应用</div></a>
+                <a href="https://pan.quark.cn/s/4ad0d4e5c1ea"><div class="download-item">加密与解密实战入门</div></a>
+                <a href="https://pan.quark.cn/s/bea3b64787f0"><div class="download-item">软件逆向分析实用技术</div></a>
+                <a href="https://pan.quark.cn/s/e5ab68b029d9"><div class="download-item">加密与解密实战攻略</div></a>
+                <a href="https://pan.quark.cn/s/57cdd0d8c576"><div class="download-item">加密与解密实战全攻略</div></a>
+                <a href="https://pan.quark.cn/s/829c11266bc"><div class="download-item">加密与解密 -- 软件保护技术及完全解决方案</div></a>
+                <a href="https://pan.quark.cn/s/ebbfcee8fcad"><div class="download-item">加密与解密 (第四版)</div></a>
+                <a href="https://pan.quark.cn/s/c0f4cac403b3"><div class="download-item">加密与解密 SofICE 使用手册</div></a>
+                <a href="https://pan.quark.cn/s/b7ccdeb40140"><div class="download-item">加密与解密</div></a>
+                <a href="https://pan.quark.cn/s/d4440a239956"><div class="download-item">计算机信息加密与解密</div></a>
+                <a href="https://pan.quark.cn/s/df1f858169e0"><div class="download-item">黑客工坊实战加密与解密</div></a>
+                <a href="https://pan.quark.cn/s/1affdce97813"><div class="download-item">黑客工坊从入门到精通：加密与解密篇</div></a>
+                <a href="https://pan.quark.cn/s/06a5d6f4175e"><div class="download-item">Java 加密与解密的艺术 (第二版)</div></a>
+                <h3>渗透-CTF</h3>
+                <a href="https://pan.quark.cn/s/005e33d77f79"><div class="download-item">清华大学 - 世界 CTF 技术大赛之初体验</div></a>
+                <a href="https://pan.quark.cn/s/962c7098026d"><div class="download-item">CTF 种 PWN 题目实例分析</div></a>
+                <a href="https://pan.quark.cn/s/eb7d689f4c72"><div class="download-item">CTF 系列文章整理 (学习 CTF 非常重要)</div></a>
+                <a href="https://pan.quark.cn/s/69f043bd4ba5"><div class="download-item">CTF 人才培养与联赛机制构建</div></a>
+                <a href="https://pan.quark.cn/s/9606bec0d643"><div class="download-item">隐写术</div></a>
+                <a href="https://pan.quark.cn/s/64b9c644ca2a"><div class="download-item">CTF_Web 学习资料</div></a>
+                <a href="https://pan.quark.cn/s/73a3ecfac8b5"><div class="download-item">CTF_小技巧.ppt</div></a>
+                <a href="https://pan.quark.cn/s/ffa8cd213428"><div class="download-item">国内外 CTF 介绍及对比</div></a>
+                <a href="https://pan.quark.cn/s/131c77384c66"><div class="download-item">从 CTF 到工业安全</div></a>
+                <a href="https://pan.quark.cn/s/7c47f8048975"><div class="download-item">CTF - 长亭</div></a>
+                <a href="https://pan.quark.cn/s/4358cbdd1277"><div class="download-item">CTF 中的密码学</div></a>
+                <a href="https://pan.quark.cn/s/fdd655d85b44"><div class="download-item">CTF 决赛回顾 (具体哪一期我不清楚)</div></a>
+                <a href="https://pan.quark.cn/s/a7d383c7cba"><div class="download-item">CTF 中 web 狗的生存之道</div></a>
+                <a href="https://pan.quark.cn/s/68abefabafbc"><div class="download-item">CTF 比赛中的那些技巧</div></a>
+                <a href="https://pan.quark.cn/s/e36da83814d3"><div class="download-item">CTF 经验分享</div></a>
+                <a href="https://pan.quark.cn/s/b10b97d18c75"><div class="download-item">CTF 指南</div></a>
+                <a href="https://pan.quark.cn/s/2bb78373e494"><div class="download-item">CTF 战队建设与网安人才培养模式探索</div></a>
+                <a href="https://pan.quark.cn/s/9a20c2967aea"><div class="download-item">CTF 逆向选手的自我修养</div></a>
+                <a href="https://pan.quark.cn/s/1e9cabf762eb"><div class="download-item">CTF 人才培养计划 (2016 年)</div></a>
+                <a href="https://pan.quark.cn/s/5a6b8ed99679"><div class="download-item">CTF 比赛总是输，你还差点 Tricks!</div></a>
+                <h3>渗透-Linux书籍</h3>
+                <a href="https://pan.quark.cn/s/1cff2360b7f0"><div class="download-item">鸟哥的Linux私房菜</div></a>
+            </div>
+            
+            <!-- 其他分类内容区可以在这里继续添加 -->
+            <div id="bian-cheng" class="subcategory-content">
+                <div class="sai_bo_h2">
+                    <span data-text="当前已经包含:Python教程 - Java教程 - Java面试题 - VUE教程">
+                        当前已经包含:Python教程 - Java教程 - Java面试题 - VUE教程
+                    </span>
+                </div>
+                <h3>Python板块</h3>
+                <a href="https://pan.quark.cn/s/c03cede34894"><div class="download-item">Python 数据化分析与数据化运营</div></a>
+                <a href="https://pan.quark.cn/s/db21b0e016af"><div class="download-item">Python 基础教程</div></a>
+                <a href="https://pan.quark.cn/s/439eac72c648"><div class="download-item">Python 神经网络编程</div></a>
+                <a href="https://pan.quark.cn/s/ea3735805e76"><div class="download-item">深度学习 Python</div></a>
+                <a href="https://pan.quark.cn/s/ab83b4ed7401"><div class="download-item">Flask Web 开发实战</div></a>
+                <a href="https://pan.quark.cn/s/293b0e1f66bd"><div class="download-item">Python3 网络爬虫开发实战</div></a>
+                <a href="https://pan.quark.cn/s/3fbb1a8050dd"><div class="download-item">Python 网络爬虫从入门到实践</div></a>
+                <h3>JAVA教程板块</h3>
+                <a href="https://pan.quark.cn/s/cd84b06f846a"><div class="download-item">Java Web开发实例大全</div></a>
+                <a href="https://pan.quark.cn/s/cf023cdd5938"><div class="download-item">Java 遗传算法编程</div></a>
+                <a href="https://pan.quark.cn/s/9b1a8aa51a48"><div class="download-item">JAVA 高并发编程详解</div></a>
+                <a href="https://pan.quark.cn/s/79b9915e6ce0"><div class="download-item">JAVA9模块化开发核心原理与实践</div></a>
+                <a href="https://pan.quark.cn/s/79011982a15a"><div class="download-item">分布式JAVA应用的基础与实操</div></a>
+                <a href="https://pan.quark.cn/s/a0b9f2cf34ca"><div class="download-item">JAVA并发编程的艺术</div></a>
+                <a href="https://pan.quark.cn/s/de4eaa314a2e"><div class="download-item">阿里巴巴JAVA开发手册</div></a>
+                <a href="https://pan.quark.cn/s/ddbe57ceb250"><div class="download-item">阿里巴巴JAVA开发手册v1.3.1</div></a>
+                <a href="https://pan.quark.cn/s/b90af9240b5e"><div class="download-item">编写高质量代码:改善JAVA程序的151个建议</div></a>
+                <a href="https://pan.quark.cn/s/71a7d2b7a667"><div class="download-item">第一行代码JAVA</div></a>
+                <a href="https://pan.quark.cn/s/0a25f6b40c26"><div class="download-item">疯狂JAVA讲义(第四版)全文</div></a>
+                <a href="https://pan.quark.cn/s/2a2f9e04bdec"><div class="download-item">疯狂JAVA突破程序员基本功的16课</div></a>
+                <a href="https://pan.quark.cn/s/d2456356a8d3"><div class="download-item">进入JAVA的世界(第二版)</div></a>
+                <a href="https://pan.quark.cn/s/f5ec47887ca3"><div class="download-item">JAVA 8 实战</div></a>
+                <a href="https://pan.quark.cn/s/f5d31e2c42b8"><div class="download-item">JAVA JDK 8 学习笔记</div></a>
+                <a href="https://pan.quark.cn/s/5a76eb6ce2d4"><div class="download-item">JAVA RESTFUL Web Service 实战(第二版)</div></a>
+                <a href="https://pan.quark.cn/s/5a7a803efc8a"><div class="download-item">JAVA Web开发实例大全基础</div></a>
+                <a href="https://pan.quark.cn/s/95eb606eb224"><div class="download-item">JAVA Web 实战开发</div></a>
+                <a href="https://pan.quark.cn/s/ac77e0d3ebd3"><div class="download-item">JAVAEE 核心技术和应用</div></a>
+                <a href="https://pan.quark.cn/s/370e2a2782c9"><div class="download-item">JAVA Web整和开发-王者归来</div></a>
+                <a href="https://pan.quark.cn/s/7ec02644313f"><div class="download-item">JAVA9 编程参考官方大全</div></a>
+                <a href="https://pan.quark.cn/s/329a8f9c3b70"><div class="download-item">Java编程思想第4版</div></a>
+                <a href="https://pan.quark.cn/s/9f7375aa7975"><div class="download-item">JAVA编程思想第四版完整中文高清</div></a>
+                <a href="https://pan.quark.cn/s/a08f30f23edb"><div class="download-item">JAVA 并发编程从入门到精通</div></a>
+                <a href="https://pan.quark.cn/s/9f4ac68c31f3"><div class="download-item">JAVA并发的艺术</div></a>
+                <a href="https://pan.quark.cn/s/e656f56a5450"><div class="download-item">JAVA并发编程实战</div></a>
+                <a href="https://pan.quark.cn/s/0063d8660e3e"><div class="download-item">JAVA并发编程之美</div></a>
+                <a href="https://pan.quark.cn/s/74ce26e8b6b8"><div class="download-item">JAVA 从入门到精通</div></a>
+                <a href="https://pan.quark.cn/s/311aa20c332b"><div class="download-item">JAVA 测试与设计从单元测试到自动Web测试</div></a>
+                <a href="https://pan.quark.cn/s/3c54b7e98e3e"><div class="download-item">JAVA从小白到大牛</div></a>
+                <a href="https://pan.quark.cn/s/824b3d7005c9"><div class="download-item">java 多线程编程实战指南</div></a>
+                <a href="https://pan.quark.cn/s/39bdc1655b2e"><div class="download-item">JAVAee开发的颠覆者Spring Boot 实战</div></a>
+                <a href="https://pan.quark.cn/s/77d91338bbfe"><div class="download-item">Java 核心技术.pdf</div></a>
+                <a href="https://pan.quark.cn/s/5d6837a09950"><div class="download-item">java 核心技术.第 8 版.pdf</div></a>
+                <a href="https://pan.quark.cn/s/b2f79b068690"><div class="download-item">Java 核心技术.pdf</div></a>
+                <a href="https://pan.quark.cn/s/c72f08f0cd1a"><div class="download-item">Java 核心技术... 第 10 版.pdf</div></a>
+                <a href="https://pan.quark.cn/s/0ab5d4ca77c3"><div class="download-item">JAVA经典算法40题</div></a>
+                <a href="https://pan.quark.cn/s/bace62505faa"><div class="download-item">JAVA加密与解密的艺术</div></a>
+                <a href="https://pan.quark.cn/s/0611948102f7"><div class="download-item">JAVA开发实例大全</div></a>
+                <a href="https://pan.quark.cn/s/d4d6b6c9eba9"><div class="download-item">java微服务.pdf</div></a>
+                <a href="https://pan.quark.cn/s/e80bae045e2a"><div class="download-item">Java网络编程.pdf</div></a>
+                <a href="https://pan.quark.cn/s/5f9eb51c08fe"><div class="download-item">Java网络编程第三版.pdf</div></a>
+                <a href="https://pan.quark.cn/s/bb200eabbe5d"><div class="download-item">Java虚拟机（...第二版）.pdf</div></a>
+                <a href="https://pan.quark.cn/s/041396945665"><div class="download-item">Java性能权威指南.pdf</div></a>
+                <a href="https://pan.quark.cn/s/c5e1c9050661"><div class="download-item">Java性能优化...权威指南.pdf</div></a>
+                <a href="https://pan.quark.cn/s/41fb0d8c1f75"><div class="download-item">Java游戏高级编程.pdf</div></a>
+                <a href="https://pan.quark.cn/s/16b8745592b2"><div class="download-item">Java语言描述.pdf</div></a>
+                <a href="https://pan.quark.cn/s/fd97b6bbccf0"><div class="download-item">码出高效：Jav...开发手册.pdf</div></a>
+                <a href="https://pan.quark.cn/s/c6f30d4b8ea8"><div class="download-item">明解Java b...柴田望洋.pdf</div></a>
+                <a href="https://pan.quark.cn/s/b5d6d31a5601"><div class="download-item">RxJava 2...x 实战.pdf</div></a>
+                <a href="https://pan.quark.cn/s/c6cb2a78b1a9"><div class="download-item">RxJava响应式编程.pdf</div></a>
+                <a href="https://pan.quark.cn/s/4de95a4fa93d"><div class="download-item">实战Java虚拟机.pdf</div></a>
+                <a href="https://pan.quark.cn/s/c8a462c5ab15"><div class="download-item">《Java网络编...4版)》.pdf</div></a>
+                <h3>JAVA面试题</h3>
+                <a href="https://pan.quark.cn/s/965d12bbd0ad"><div class="download-item">JAVA Web轻量级开发面试教程</div></a>
+                <a href="https://pan.quark.cn/s/75911c1277d2"><div class="download-item">JAVA 程序员面试宝典第二版</div></a>
+                <a href="https://pan.quark.cn/s/dd1ec22db4e3"><div class="download-item">JAVA程序员面试宝典+</div></a>
+                <a href="https://pan.quark.cn/s/ed75516bbe2c"><div class="download-item">JAVA程序员面试宝典</div></a>
+                <a href="https://pan.quark.cn/s/717cac1a25a0"><div class="download-item">JAVA程序员笔试宝典</div></a>
+                <a href="https://pan.quark.cn/s/9d7bde11533e"><div class="download-item">JAVA核心面试只是整理</div></a>
+                <a href="https://pan.quark.cn/s/8c28ca677e36"><div class="download-item">Java灵魂17问.pdf</div></a>
+                <a href="https://pan.quark.cn/s/bda7e84e7e43"><div class="download-item">Java面经-百...老哥整理.pdf</div></a>
+                <a href="https://pan.quark.cn/s/e9223001d1f5"><div class="download-item">Java面试宝典...】很不错.pdf</div></a>
+                <a href="https://pan.quark.cn/s/ea7069568479"><div class="download-item">Java面试笔试...详细答案.pdf</div></a>
+                <a href="https://pan.quark.cn/s/9ed2caf672e4"><div class="download-item">Java面试精选72题.pdf</div></a>
+                <a href="https://pan.quark.cn/s/b764b5757c31"><div class="download-item">Java面试突击...V1.0.pdf</div></a>
+                <a href="https://pan.quark.cn/s/3d281cd6d713"><div class="download-item">Java面试突击...V2.0.pdf</div></a>
+                <a href="https://pan.quark.cn/s/cde054b125f9"><div class="download-item">Java面试突击...V3.0.pdf</div></a>
+                <a href="https://pan.quark.cn/s/6d8b20102c2a"><div class="download-item">JAVA面试题解惑系列.pdf</div></a>
+                <a href="https://pan.quark.cn/s/714d72187416"><div class="download-item">Java面试题以及答案.pdf</div></a>
+                <a href="https://pan.quark.cn/s/c051a41e2b5a"><div class="download-item">Java面试问题集.pdf</div></a>
+                <a href="https://pan.quark.cn/s/d935139c3799"><div class="download-item">JAVA面试资料汇总.pdf</div></a>
+                <a href="https://pan.quark.cn/s/828d3452a479"><div class="download-item">Java求职面试宝典157页.pdf</div></a>
+                <h3>VUE教程板块</h3>
+                <a href="https://pan.quark.cn/s/56812c814410"><div class="download-item">深入浅出Vue.js by刘博文</div></a>
+                <a href="https://pan.quark.cn/s/d8f41f7b55fe"><div class="download-item">深入浅出vue.js</div></a>
+                <a href="https://pan.quark.cn/s/d8f41f7b55fe"><div class="download-item">Vue3.0 教程</div></a>
+                <a href="https://pan.quark.cn/s/944e45feca95"><div class="download-item">Vue 前端开发 快速入门</div></a>
+                <a href="https://pan.quark.cn/s/ad736335dc07"><div class="download-item">VUE前端开发</div></a>
+                <a href="https://pan.quark.cn/s/03137b98ad76"><div class="download-item">VUE权威指南</div></a>
+                <a href="https://pan.quark.cn/s/a3adfb5b977f"><div class="download-item">VUE 权威指南完整版</div></a>
+                <a href="https://pan.quark.cn/s/b945af4c9993"><div class="download-item">VUE.js 实战</div></a>
+                <a href="https://pan.quark.cn/s/0bf3e370ad6a"><div class="download-item">VUE实战项目</div></a>
+                <a href="https://pan.quark.cn/s/209c3c06d6e1"><div class="download-item">Vue.js小书</div></a>
+                <a href="https://pan.quark.cn/s/d89eba2668e3"><div class="download-item">Web开发实战</div></a>
+                <a href="https://pan.quark.cn/s/5efc20e99db4"><div class="download-item">Vue.js 项目实战开发</div></a>
+            </div>
+            
+            <div id="cracking" class="subcategory-content">
+                <div class="sai_bo_h2">
+                    <span data-text="当前已经包含:八卦 - 风水 - 八字 - 手面相 - 大六壬 - 择日 - 奇门 - 等">
+                        当前已经包含:八卦 - 风水 - 八字 - 手面相 - 大六壬 - 择日 - 奇门 - 等
+                    </span>
+                </div>
+                <h3>八卦</h3>
+                <a href="https://pan.quark.cn/s/4494086ca0eb"><div class="download-item">八卦 - 易经六十四卦详解</div></a>
+
+                <h3>风水</h3>
+                <a href="https://pan.quark.cn/s/03221a968107"><div class="download-item">《阳宅风水化煞》住房与办公室犯煞 800 讲原版.pdf</div></a>
+                <a href="https://pan.quark.cn/s/e158af1cf748"><div class="download-item">三元风水 - 风水学的运用与调整</div></a>
+                <a href="https://pan.quark.cn/s/55a5e835e4f8"><div class="download-item">东西四宅速查表</div></a>
+                <a href="https://pan.quark.cn/s/c0a05c163b8a"><div class="download-item">八卦风水学</div></a>
+                <a href="https://pan.quark.cn/s/5a0a08ffa9e0"><div class="download-item">阴宅四局</div></a>
+                <a href="https://pan.quark.cn/s/61c2407b907a"><div class="download-item">四十九层罗经讲解</div></a>
+                <a href="https://pan.quark.cn/s/6473f62411bd"><div class="download-item">民间风水一点通</div></a>
+
+                <h3>八字命理</h3>
+                <a href="https://pan.quark.cn/s/8da34fc1b01e"><div class="download-item">四柱预测学</div></a>
+                <a href="https://pan.quark.cn/s/2fc3350413b1"><div class="download-item">八字泄天机</div></a>
+                <a href="https://pan.quark.cn/s/57f61ca7249b"><div class="download-item">八字一柱讨命法</div></a>
+                <a href="https://pan.quark.cn/s/9c7db7d06697"><div class="download-item">八字预测</div></a>
+
+                <h3>手面相\解梦</h3>
+                <a href="https://pan.quark.cn/s/0c09682334d4"><div class="download-item">周公解梦原著</div></a>
+                <a href="https://pan.quark.cn/s/fba40494e238"><div class="download-item">通天神相</div></a>
+                <a href="https://pan.quark.cn/s/8a898337bd54"><div class="download-item">解梦灵书</div></a>
+
+                <h3>大六壬</h3>
+                <a href="https://pan.quark.cn/s/a28db8cdc0a6"><div class="download-item">大六壬金口诀</div></a>
+
+                <h3>择吉日</h3>
+                <a href="https://pan.quark.cn/s/1c95d8d5715e"><div class="download-item">吉时吉日</div></a>
+                <a href="https://pan.quark.cn/s/5e5f342ec257"><div class="download-item">择日法</div></a>   
+
+                <h3>奇门遁甲</h3>
+                <a href="https://pan.quark.cn/s/fa63e9377e89"><div class="download-item">古传奇门遁甲</div></a>
+ 
+                <h3>其他</h3>
+                <a href="https://pan.quark.cn/s/5b5282d1665f"><div class="download-item">国学 15 套笔记</div></a>
+                
+                <h3>经文</h3>
+                <a href="https://pan.quark.cn/s/57b7aacb0e9c"><div class="download-item">马王锦版 -《道德经》</div></a>  
+            </div>
+            
+            <div id="tutorials" class="subcategory-content">
+                <h3>其他教程资源</h3>
+                <div class="download-item">此版块待定，敬请期待...</div>
+            </div>
+        </div>
+
+    </main>
+<script src="https://giscus.app/client.js"
+        data-repo="Sgyling/guo_xue"
+        data-repo-id="R_kgDONd3ItA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDONd3ItM4Cva9K"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="catppuccin_mocha"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+    <!-- 固定底部状态栏 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 杨CC资源分享站 版权所有</p>
+            <a href="#top" class="back-to-top">返回顶部</a>
+        </div>
+    </footer>
+    <script>
+        // 创建更多随机悬浮形状
+        function createFloatingShapes() {
+            const shapesCount = 5;
+            const container = document.body;
+            
+            for (let i = 0; i < shapesCount; i++) {
+                const shape = document.createElement('div');
+                shape.classList.add('floating-shape');
+                
+                // 随机属性
+                const size = Math.random() * 100 + 50;
+                const top = Math.random() * 100;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 5;
+                
+                shape.style.width = `${size}px`;
+                shape.style.height = `${size}px`;
+                shape.style.top = `${top}%`;
+                shape.style.left = `${left}%`;
+                shape.style.animationDelay = `${delay}s`;
+                
+                // 随机形状
+                const shapeType = Math.floor(Math.random() * 3);
+                switch(shapeType) {
+                    case 0: // 三角形
+                        shape.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
+                        break;
+                    case 1: // 圆形
+                        shape.style.borderRadius = '50%';
+                        break;
+                    case 2: // 矩形
+                        shape.style.width = `${size * 1.5}px`;
+                        break;
+                }
+                
+                container.appendChild(shape);
+            }
+        }
+        
+        // 处理导航栏汉堡图标点击
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // 滚动时让卡片轻微浮动
+            const cards = document.querySelectorAll('.category-card');
+            cards.forEach((card, index) => {
+                const floatAmount = Math.sin(window.scrollY * 0.001 + index) * 3;
+                card.style.transform = `translateY(${floatAmount}px)`;
+            });
+        });
+
+        // 处理二级分类显示 - 添加故障溶解过渡
+        document.querySelectorAll('.show-subcategory').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = btn.getAttribute('href');
+                const allContents = document.querySelectorAll('.subcategory-content');
+                const targetElement = document.querySelector(targetId);
+                
+                // 先隐藏所有内容并添加故障效果
+                allContents.forEach(content => {
+                    if (content.style.display === 'block') {
+                        content.style.animation = 'glitchOut 0.5s forwards';
+                        setTimeout(() => {
+                            content.style.display = 'none';
+                            content.style.animation = '';
+                        }, 500);
+                    }
+                });
+                
+                // 显示目标内容并添加故障进入效果
+                setTimeout(() => {
+                    targetElement.style.display = 'block';
+                    targetElement.style.animation = 'glitchIn 0.8s forwards';
+                    setTimeout(() => {
+                        targetElement.style.animation = '';
+                    }, 800);
+                    
+                    // 平滑滚动到目标位置
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 500);
+            });
+        });
+
+        // 添加故障动画样式
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes glitchOut {
+                0% { opacity: 1; transform: translate(0); }
+                50% { opacity: 0.5; transform: translate(-5px, 3px) scale(0.98); filter: blur(2px); }
+                100% { opacity: 0; transform: translate(10px, -5px) scale(0.9); filter: blur(5px); }
+            }
+            
+            @keyframes glitchIn {
+                0% { opacity: 0; transform: translate(10px, -5px) scale(0.9); filter: blur(5px); }
+                50% { opacity: 0.5; transform: translate(-5px, 3px) scale(0.98); filter: blur(2px); }
+                100% { opacity: 1; transform: translate(0); }
+            }
+            
+            /* 网格点闪烁动画 */
+            @keyframes gridPulse {
+                0%, 100% { opacity: 0.2; }
+                50% { opacity: 0.8; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // 初始化
+        window.addEventListener('load', () => {
+            createFloatingShapes();
+            
+            // 创建随机网格点
+            const body = document.body;
+            const gridPoints = 30;
+            for (let i = 0; i < gridPoints; i++) {
+                const point = document.createElement('div');
+                point.style.position = 'absolute';
+                point.style.width = '2px';
+                point.style.height = '2px';
+                point.style.backgroundColor = ['var(--neon-blue)', 'var(--neon-pink)', 'var(--neon-purple)'][Math.floor(Math.random() * 3)];
+                point.style.left = `${Math.random() * 100}%`;
+                point.style.top = `${Math.random() * 100}%`;
+                point.style.animation = `gridPulse ${Math.random() * 5 + 3}s infinite`;
+                point.style.animationDelay = `${Math.random() * 3}s`;
+                point.style.pointerEvents = 'none';
+                point.style.zIndex = '0';
+                body.appendChild(point);
+            }
+        });
+    </script>
+    <script>
+        // 创建更多随机悬浮图形
+        function createFloatingShapes() {
+            const shapesCount = 6;
+            const container = document.body;
+            
+            for (let i = 0; i < shapesCount; i++) {
+                const shape = document.createElement('div');
+                const isTriangle = Math.random() > 0.5;
+                
+                if (isTriangle) {
+                    shape.classList.add('floating-shape', 'triangle');
+                    if (Math.random() > 0.5) {
+                        shape.style.transform = 'rotate(180deg)';
+                    }
+                } else {
+                    shape.classList.add('floating-shape', 'hexagon');
+                }
+                
+                // 随机位置和大小
+                const size = Math.random() * 30 + 20;
+                shape.style.width = isTriangle ? '0' : `${size}px`;
+                shape.style.height = isTriangle ? '0' : `${size * 0.58}px`;
+                if (isTriangle) {
+                    shape.style.borderLeftWidth = `${size/2}px`;
+                    shape.style.borderRightWidth = `${size/2}px`;
+                    shape.style.borderBottomWidth = `${size}px`;
+                }
+                
+                shape.style.top = `${Math.random() * 100}%`;
+                shape.style.left = `${Math.random() * 100}%`;
+                shape.style.animationDelay = `${Math.random() * 5}s`;
+                
+                // 随机霓虹色
+                const colors = ['var(--neon-blue)', 'var(--neon-pink)', 'var(--neon-purple)'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                shape.style.borderColor = isTriangle ? `transparent transparent ${color} transparent` : color;
+                shape.style.boxShadow = `0 0 15px ${color}80`;
+                
+                container.appendChild(shape);
+            }
+        }
+
+        // 处理导航栏汉堡图标点击
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 0 15px rgba(0, 240, 255, 0.3)';
+            } else {
+                navbar.style.boxShadow = '0 0 10px rgba(0, 240, 255, 0.2)';
+            }
+
+            // 滚动时移动金属反光
+            const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            const glowElements = document.querySelectorAll('.navbar::before');
+            // 这里使用CSS动画处理反光移动
+        });
+
+        // 淡入动画效果
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    fadeInObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+
+        // 页面加载完成后创建悬浮图形
+        window.addEventListener('load', createFloatingShapes);
+
+        // 为链接添加点击动画效果
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                
+                // 添加点击波纹效果
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.width = '100px';
+                ripple.style.height = '100px';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(157, 0, 255, 0.3)';
+                ripple.style.transform = 'translate(-50%, -50%) scale(0)';
+                ripple.style.animation = 'ripple 1s';
+                ripple.style.pointerEvents = 'none';
+                
+                this.appendChild(ripple);
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                // 延迟跳转，等待动画完成
+                setTimeout(() => {
+                    if (href === '#top') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        window.location.href = href;
+                    }
+                }, 300);
+                
+                // 动画结束后移除波纹元素
+                setTimeout(() => ripple.remove(), 1000);
+            });
+        });
+
+        // 添加波纹动画样式
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: translate(-50%, -50%) scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

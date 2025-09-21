@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /node_modules/
+Disallow: /vendors/
+Disallow: /archives/
+Allow: /
+Sitemap: https://ycc77.cn/RSS.xml
