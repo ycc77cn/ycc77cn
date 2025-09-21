@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="赛博朋克,后台登录,管理员登录,系统登录,登录页面,网络安全,身份验证,账号密码,登录界面,杨CC资源站">
+    <title>赛博朋克后台登录</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #0A0E2A;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 电子噪点背景 */
+        .noise-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* 流动网格背景 */
+        .grid-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(0, 245, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 245, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 30s linear infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes gridMove {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 500px 500px;
+            }
+        }
+
+        /* 主容器样式 */
+        .login-container {
+            position: relative;
+            width: 420px;
+            padding: 40px;
+            background: rgba(185, 103, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 12px;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        /* 呼吸式霓虹边框 */
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid transparent;
+            border-radius: 14px;
+            animation: borderPulse 2s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes borderPulse {
+            0%, 100% {
+                border-color: #FFFFFF;
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+                opacity: 0.85;
+            }
+            50% {
+                border-color: #7D00FF;
+                box-shadow: 0 0 20px rgba(125, 0, 255, 0.5);
+                opacity: 1;
+            }
+        }
+
+        /* 标题样式 */
+        .login-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.7);
+            position: relative;
+        }
+
+        .login-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #00F5FF, #FF00F5);
+        }
+
+        /* 表单样式 */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 1px;
+        }
+
+        /* 输入框样式 */
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(10, 14, 42, 0.6);
+            border: 3px solid #00F5FF;
+            border-radius: 6px;
+            color: #FFFFFF;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-input:focus {
+            outline: none;
+            animation: inputGlow 0.5s forwards;
+        }
+
+        @keyframes inputGlow {
+            0% {
+                border-color: #00F5FF;
+                box-shadow: 0 0 5px rgba(0, 245, 255, 0.5);
+            }
+            100% {
+                border-color: #FF0080;
+                box-shadow: 0 0 10px rgba(255, 0, 128, 0.7);
+            }
+        }
+
+        .form-input:focus::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* 故障字体效果 */
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            animation: glitch 0.8s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-1px, 1px);
+            }
+            40% {
+                transform: translate(1px, -1px);
+            }
+            60% {
+                transform: translate(-1px, -1px);
+            }
+            80% {
+                transform: translate(1px, 1px);
+            }
+        }
+
+        /* 登录按钮样式 */
+        .login-btn {
+            padding: 12px 0;
+            background: linear-gradient(45deg, #00F5FF, #7D00FF);
+            border: none;
+            border-radius: 6px;
+            color: #FFFFFF;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(125, 0, 255, 0.6);
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+        /* 加载动画 */
+        .loader {
+            display: none;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+        }
+
+        .loader.active {
+            display: block;
+        }
+
+        .loader-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #00F5FF;
+            border-radius: 50%;
+            animation: infiniteSpin 2s infinite ease-in-out;
+        }
+
+        .loader-dot:nth-child(1) {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 0s;
+        }
+
+        .loader-dot:nth-child(2) {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            animation-delay: 0.5s;
+        }
+
+        .loader-dot:nth-child(3) {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 1s;
+        }
+
+        .loader-dot:nth-child(4) {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            animation-delay: 1.5s;
+        }
+
+        @keyframes infiniteSpin {
+            0%, 100% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* 错误提示 */
+        .error-message {
+            display: none;
+            color: #FFA500;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            animation: errorFlash 0.5s;
+        }
+
+        .error-message.active {
+            display: block;
+        }
+
+        @keyframes errorFlash {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* 扫描线效果 */
+        .scanline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 5;
+            animation: scanlineMove 4s linear infinite;
+        }
+
+        @keyframes scanlineMove {
+            0% {
+                top: 0;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+
+        /* 底部信息 */
+        .footer-info {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-info span {
+            color: #00F5FF;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 电子噪点背景 -->
+    <div class="noise-bg"></div>
+    
+    <!-- 流动网格背景 -->
+    <div class="grid-bg"></div>
+    
+    <!-- 扫描线效果 -->
+    <div class="scanline"></div>
+
+    <!-- 主登录容器 -->
+    <div class="login-container">
+        <h2 class="login-title">后台登录</h2>
+        
+        <form class="login-form" id="loginForm">
+            <div class="form-group">
+                <label class="form-label" for="username">账号</label>
+                <input type="text" id="username" class="form-input" placeholder="输入账号..." value="123456">
+                <div class="loader">
+                    <div class="loader-dot"></div>
+                    <div class="loader-dot"></div>
+                    <div class="loader-dot"></div>
+                    <div class="loader-dot"></div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="password">密码</label>
+                <input type="password" id="password" class="form-input" placeholder="输入密码..." value="123456">
+            </div>
+            
+            <button type="submit" class="login-btn">登录系统</button>
+            
+            <div class="error-message" id="errorMessage">指令异常：请检查账号密码</div>
+        </form>
+        
+        <div class="footer-info">
+            赛博朋克安全系统 <span>●</span> 20771212
+        </div>
+    </div>
+
+    <script>
+        // 简单的登录验证逻辑
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const loader = document.querySelector('.loader');
+            
+            // 显示加载动画
+            loader.classList.add('active');
+            errorMessage.classList.remove('active');
+            
+            // 模拟登录过程
+            setTimeout(() => {
+                // 隐藏加载动画
+                loader.classList.remove('active');
+                
+                // 验证账号密码（均为123456）
+                if (username === '123456' && password === '123456') {
+                    // 登录成功，这里可以添加跳转逻辑
+                    alert('登录成功！正在进入后台系统...');
+                    
+                    // 成功时的边框动画变化
+                    document.querySelector('.login-container::before').style.animation = 'successGlow 1s';
+                } else {
+                    // 登录失败，显示错误信息
+                    errorMessage.classList.add('active');
+                    
+                    // 错误时的边框闪烁效果
+                    const container = document.querySelector('.login-container');
+                    container.style.animation = 'errorBorder 0.5s';
+                    setTimeout(() => {
+                        container.style.animation = '';
+                    }, 500);
+                }
+            }, 1500);
+        });
+
+        // 添加CSS动画到样式表
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes successGlow {
+                0% {
+                    border-color: #00F5FF;
+                    box-shadow: 0 0 20px rgba(0, 245, 255, 0.7);
+                }
+                100% {
+                    border-color: #00F5FF;
+                    box-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+                }
+            }
+            
+            @keyframes errorBorder {
+                0%, 100% {
+                    border-color: #FF0000;
+                    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+                }
+                50% {
+                    border-color: #FF0000;
+                    box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

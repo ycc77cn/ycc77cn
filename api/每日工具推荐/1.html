@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日工具推荐</title>
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --neon-pink: #ff2a6d;
+            --neon-purple: #d300c5;
+            --neon-green: #05ffa1;
+            --dark-bg: #0d0221;
+            --darker-bg: #080116;
+            --grid-color: rgba(0, 243, 255, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Orbitron', 'Courier New', monospace;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
+        }
+        
+        /* 网格背景增强 */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+            animation: gridMove 15s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+        
+        /* 粒子背景容器 */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* 霓虹灯管效果增强 */
+        .neon-border {
+            position: relative;
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 5px var(--neon-blue),
+                        0 0 10px var(--neon-blue),
+                        0 0 20px var(--neon-blue),
+                        inset 0 0 5px var(--neon-blue);
+            background-color: rgba(13, 2, 33, 0.8);
+            transition: all 0.5s ease;
+        }
+        
+        .neon-border:hover {
+            box-shadow: 0 0 10px var(--neon-blue),
+                        0 0 20px var(--neon-blue),
+                        0 0 30px var(--neon-blue),
+                        inset 0 0 10px var(--neon-blue);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 2rem;
+            text-align: center;
+            z-index: 1;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        /* 容器辉光效果 */
+        .container::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple), var(--neon-blue), var(--neon-green));
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.7;
+            animation: glowShift 8s ease infinite;
+            background-size: 400% 400%;
+        }
+        
+        @keyframes glowShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        h1 {
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue),
+                         0 0 10px var(--neon-blue),
+                         0 0 20px var(--neon-blue);
+            margin-bottom: 2rem;
+            font-size: 3rem;
+            letter-spacing: 0.1em;
+            width: 100%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue); }
+            50% { text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue); }
+        }
+        
+        .tool-display {
+            min-height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-size: 2.8rem;
+            position: relative;
+            overflow: hidden;
+            width: 80vw;
+            max-width: 1000px;
+        }
+        
+        .tool-display::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.4) 100%
+            );
+            transform: skewX(-25deg);
+            animation: scanline 2s infinite;
+        }
+        
+        @keyframes scanline {
+            0% { left: -100%; }
+            100% { left: 150%; }
+        }
+        
+        .prompt-text {
+            color: var(--neon-pink);
+            text-shadow: 0 0 5px var(--neon-pink),
+                         0 0 10px var(--neon-pink),
+                         0 0 20px var(--neon-pink);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 2.2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .prompt-text:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 10px var(--neon-pink),
+                         0 0 20px var(--neon-pink),
+                         0 0 30px var(--neon-pink);
+        }
+        
+        .action-btn {
+            background: none;
+            border: 2px solid var(--neon-purple);
+            color: var(--neon-purple);
+            padding: 0.8rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            text-shadow: 0 0 5px var(--neon-purple);
+            box-shadow: 0 0 5px var(--neon-purple),
+                        0 0 10px var(--neon-purple);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .action-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(211, 0, 197, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .action-btn:hover {
+            background-color: rgba(211, 0, 197, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 0 10px var(--neon-purple),
+                        0 0 20px var(--neon-purple);
+        }
+        
+        .action-btn:hover::after {
+            left: 100%;
+        }
+        
+        /* 增大模态框并增强效果 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px);
+            animation: modalFadeIn 0.5s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background-color: var(--darker-bg);
+            padding: 3rem;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green),
+                        0 0 30px var(--neon-green),
+                        0 0 45px var(--neon-green);
+            max-width: 800px; /* 增大模态框最大宽度 */
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: modalPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes modalPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            70% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        /* 模态框辉光效果 */
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid var(--neon-green);
+            transform: translate(5px, 5px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .modal h2 {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green),
+                         0 0 10px var(--neon-green),
+                         0 0 20px var(--neon-green);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .modal p {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .close-btn {
+            background: none;
+            border: 2px solid var(--neon-green);
+            color: var(--neon-green);
+            padding: 0.8rem 2rem;
+            cursor: pointer;
+            box-shadow: 0 0 5px var(--neon-green),
+                        0 0 10px var(--neon-green);
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .close-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(5, 255, 161, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .close-btn:hover {
+            background-color: rgba(5, 255, 161, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 0 10px var(--neon-green),
+                        0 0 20px var(--neon-green);
+        }
+        
+        .close-btn:hover::after {
+            left: 100%;
+        }
+        
+        /* 故障效果增强 */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--neon-pink), -4px 0 rgba(255, 42, 109, 0.5);
+            clip: rect(44px, 9999px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--neon-blue), -4px 0 rgba(0, 243, 255, 0.5);
+            clip: rect(44px, 9999px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% { clip: rect(42px, 9999px, 44px, 0); }
+            5% { clip: rect(12px, 9999px, 59px, 0); }
+            10% { clip: rect(48px, 9999px, 29px, 0); }
+            15% { clip: rect(42px, 9999px, 73px, 0); }
+            20% { clip: rect(63px, 9999px, 27px, 0); }
+            25% { clip: rect(34px, 9999px, 55px, 0); }
+            30% { clip: rect(86px, 9999px, 73px, 0); }
+            35% { clip: rect(20px, 9999px, 20px, 0); }
+            40% { clip: rect(26px, 9999px, 60px, 0); }
+            45% { clip: rect(25px, 9999px, 66px, 0); }
+            50% { clip: rect(57px, 9999px, 98px, 0); }
+            55% { clip: rect(5px, 9999px, 46px, 0); }
+            60% { clip: rect(82px, 9999px, 31px, 0); }
+            65% { clip: rect(54px, 9999px, 27px, 0); }
+            70% { clip: rect(28px, 9999px, 99px, 0); }
+            75% { clip: rect(45px, 9999px, 69px, 0); }
+            80% { clip: rect(23px, 9999px, 85px, 0); }
+            85% { clip: rect(54px, 9999px, 84px, 0); }
+            90% { clip: rect(45px, 9999px, 47px, 0); }
+            95% { clip: rect(37px, 9999px, 20px, 0); }
+            100% { clip: rect(4px, 9999px, 91px, 0); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            5% { clip: rect(52px, 9999px, 74px, 0); }
+            10% { clip: rect(79px, 9999px, 85px, 0); }
+            15% { clip: rect(75px, 9999px, 5px, 0); }
+            20% { clip: rect(67px, 9999px, 61px, 0); }
+            25% { clip: rect(14px, 9999px, 79px, 0); }
+            30% { clip: rect(1px, 9999px, 66px, 0); }
+            35% { clip: rect(86px, 9999px, 30px, 0); }
+            40% { clip: rect(23px, 9999px, 98px, 0); }
+            45% { clip: rect(85px, 9999px, 72px, 0); }
+            50% { clip: rect(71px, 9999px, 75px, 0); }
+            55% { clip: rect(2px, 9999px, 48px, 0); }
+            60% { clip: rect(30px, 9999px, 16px, 0); }
+            65% { clip: rect(59px, 9999px, 50px, 0); }
+            70% { clip: rect(41px, 9999px, 62px, 0); }
+            75% { clip: rect(2px, 9999px, 82px, 0); }
+            80% { clip: rect(47px, 9999px, 73px, 0); }
+            85% { clip: rect(3px, 9999px, 27px, 0); }
+            90% { clip: rect(26px, 9999px, 55px, 0); }
+            95% { clip: rect(42px, 9999px, 97px, 0); }
+            100% { clip: rect(38px, 9999px, 49px, 0); }
+        }
+        
+        /* 工具列表动画增强 */
+        @keyframes toolFlash {
+            0% { opacity: 0; transform: scale(0.9); filter: blur(2px); }
+            50% { opacity: 1; transform: scale(1.05); filter: blur(0); }
+            100% { opacity: 0; transform: scale(0.9); filter: blur(2px); }
+        }
+        
+        .tool-item {
+            position: absolute;
+            animation: toolFlash 0.1s forwards;
+            opacity: 0;
+            font-size: 2.8rem;
+            text-align: center;
+            width: 100%;
+            transform-origin: center;
+        }
+        
+        /* 响应式设计调整 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tool-display {
+                font-size: 2rem;
+                padding: 1.5rem;
+                width: 90vw;
+            }
+            
+            .tool-item {
+                font-size: 2rem;
+            }
+            
+            .prompt-text {
+                font-size: 1.8rem;
+            }
+            
+            .action-btn {
+                font-size: 1.2rem;
+                padding: 0.6rem 1.5rem;
+            }
+            
+            .modal-content {
+                padding: 2rem;
+            }
+            
+            .modal h2 {
+                font-size: 2rem;
+            }
+            
+            .modal p {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tool-display {
+                font-size: 1.6rem;
+                padding: 1rem;
+                width: 95vw;
+            }
+            
+            .tool-item {
+                font-size: 1.6rem;
+            }
+            
+            .prompt-text {
+                font-size: 1.4rem;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+            }
+            
+            .modal h2 {
+                font-size: 1.8rem;
+            }
+            
+            .modal p {
+                font-size: 1.1rem;
+            }
+            
+            .close-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+        
+    </style>
+    <!-- 引入赛博朋克风格字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 粒子效果库 -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- 粒子背景 -->
+    <div id="particles-js"></div>
+    
+    <div class="container neon-border">
+        <h1 class="glitch" data-text="每日工具推荐">每日工具推荐</h1>
+        
+        <div class="tool-display neon-border" id="toolDisplay">
+            <div class="prompt-text" id="promptText">点击开始今日工具介绍</div>
+        </div>
+        
+        <button class="action-btn" id="actionBtn">开始筛选</button>
+    </div>
+    
+    <!-- 增大后的模态框 -->
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <h2>今日推荐</h2>
+            <p id="modalText">今日要介绍的是：<b style="color: cyan; font-size: 200%;">薅羊毛_ustat</b>_一个网站统计工具</p>
+            <a href="https://yancy77.cn"><button class="close-btn" id="closeBtn">开讲!</button></a>
+            <!-- <a href="2.html"><button class="close-btn" id="closeBtn">开讲!</button></a> -->
+        </div>
+    </div>
+
+    <script>
+        // 最终显示的工具
+        const finalTool = "薅羊毛:Ustat";
+        // 初始化粒子背景
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: ["#00f3ff", "#ff2a6d", "#d300c5", "#05ffa1"] },
+                shape: { type: "circle" },
+                opacity: { 
+                    value: 0.5, 
+                    random: true,
+                    animation: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+                },
+                size: { 
+                    value: 3, 
+                    random: true,
+                    animation: { enable: true, speed: 2, size_min: 0.1, sync: false }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#00f3ff",
+                    opacity: 0.1,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 0.3 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+        
+        // 工具列表
+        const securityTools = [
+            "MaliciousCheck_开源应急响应工具",
+            "ThreatHunt_威胁狩猎平台",
+            "LogAnalyzer_日志分析工具",
+            "FirewallGuard_防火墙管理系统",
+            "VulnScanner_漏洞扫描器",
+            "SIEMCore_安全信息事件管理",
+            "SandboxLab_恶意代码沙箱",
+            "NetworkMonitor_网络流量监控",
+            "IDSGuard_入侵检测系统",
+            "CryptoGuard_加密审计工具",
+            // ... 保持原有工具列表 ...
+            "pigz_并行gzip工具",
+            "pbzip2_并行bzip2工具"
+        ];
+        
+        // DOM元素
+        const toolDisplay = document.getElementById('toolDisplay');
+        const promptText = document.getElementById('promptText');
+        const actionBtn = document.getElementById('actionBtn');
+        const resultModal = document.getElementById('resultModal');
+        const modalText = document.getElementById('modalText');
+        const closeBtn = document.getElementById('closeBtn');
+        
+        
+        
+        // 动画状态
+        let isAnimating = false;
+        
+        // 点击事件处理
+        function startAnimation() {
+            if (isAnimating) return;
+            
+            isAnimating = true;
+            actionBtn.disabled = true;
+            actionBtn.textContent = "筛选中...";
+            
+            // 添加按钮加载动画
+            actionBtn.classList.add('loading');
+            
+            // 清除提示文本
+            promptText.style.display = 'none';
+            
+            // 动画持续3秒
+            const animationDuration = 3000;
+            const startTime = Date.now();
+            
+            // 快速切换工具名称
+            function updateTool() {
+                const currentTime = Date.now();
+                const elapsedTime = currentTime - startTime;
+                
+                // 清除之前的工具元素
+                while (toolDisplay.children.length > 0) {
+                    toolDisplay.removeChild(toolDisplay.firstChild);
+                }
+                
+                // 随机选择一个工具
+                const randomTool = securityTools[Math.floor(Math.random() * securityTools.length)];
+                
+                // 创建新的工具元素
+                const toolElement = document.createElement('div');
+                toolElement.className = 'tool-item';
+                toolElement.textContent = `${randomTool}`;
+                
+                // 随机颜色
+                const colors = ['var(--neon-blue)', 'var(--neon-pink)', 'var(--neon-purple)', 'var(--neon-green)'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                toolElement.style.color = randomColor;
+                toolElement.style.textShadow = `0 0 5px ${randomColor}, 0 0 10px ${randomColor}`;
+                
+                // 随机旋转角度增加动感
+                const randomRotate = (Math.random() - 0.5) * 4;
+                toolElement.style.transform = `rotate(${randomRotate}deg)`;
+                
+                toolDisplay.appendChild(toolElement);
+                
+                // 控制动画速度：逐渐减慢
+                let interval = 50 - (elapsedTime / animationDuration) * 40;
+                interval = Math.max(10, interval); // 最小间隔
+                
+                if (elapsedTime < animationDuration) {
+                    setTimeout(updateTool, interval);
+                } else {
+                    // 动画结束，显示最终工具
+                    endAnimation();
+                }
+            }
+            
+            // 开始动画
+            updateTool();
+        }
+        
+        // 结束动画，显示结果
+        function endAnimation() {
+            // 清除所有子元素
+            while (toolDisplay.children.length > 0) {
+                toolDisplay.removeChild(toolDisplay.firstChild);
+            }
+            
+            // 显示最终工具
+            const finalElement = document.createElement('div');
+            finalElement.className = 'glitch';
+            finalElement.setAttribute('data-text', finalTool);
+            finalElement.textContent = finalTool;
+            finalElement.style.color = 'var(--neon-green)';
+            finalElement.style.textShadow = '0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 20px var(--neon-green)';
+            finalElement.style.fontSize = '2.8rem';
+            toolDisplay.appendChild(finalElement);
+            
+            // 添加最终选中效果动画
+            finalElement.animate([
+                { transform: 'scale(0.8)', opacity: 0 },
+                { transform: 'scale(1.1)', opacity: 1 },
+                { transform: 'scale(1)', opacity: 1 }
+            ], {
+                duration: 800,
+                easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+            });
+            
+            // 重置状态
+            isAnimating = false;
+            actionBtn.disabled = false;
+            actionBtn.textContent = "重新筛选";
+            actionBtn.classList.remove('loading');
+            
+            // 显示模态框
+            setTimeout(() => {
+                resultModal.style.display = 'flex';
+            }, 500);
+        }
+        
+        // 关闭模态框
+        function closeModal() {
+            // 添加关闭动画
+            const modalContent = document.querySelector('.modal-content');
+            modalContent.animate([
+                { transform: 'scale(1)', opacity: 1 },
+                { transform: 'scale(0.8)', opacity: 0 }
+            ], {
+                duration: 300,
+                easing: 'ease-out'
+            }).onfinish = () => {
+                resultModal.style.display = 'none';
+            };
+        }
+        
+        // 事件监听
+        actionBtn.addEventListener('click', startAnimation);
+        closeBtn.addEventListener('click', closeModal);
+        promptText.addEventListener('click', startAnimation);
+        
+        // 点击模态框外部关闭
+        resultModal.addEventListener('click', (e) => {
+            if (e.target === resultModal) {
+                closeModal();
+            }
+        });
+        
+        // 添加键盘ESC关闭模态框
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && resultModal.style.display === 'flex') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

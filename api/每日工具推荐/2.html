@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>视频违规提示 - 抖音</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义颜色和字体 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#fe2c55',
+                        dark: '#121212',
+                        light: '#f5f5f5',
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .backdrop-blur {
+                backdrop-filter: blur(8px);
+            }
+        }
+    </style>
+    <script defer src="https://01987425-44bc-77e0-a189-165a6b6e93b4.ustat1.com/ustat.js"></script>
+</head>
+<body class="bg-primary text-white min-h-screen flex flex-col overflow-hidden">
+    <!-- 视频背景（模糊处理） -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+        <img src="https://picsum.photos/1280/720" alt="被屏蔽的视频缩略图" class="w-full h-full object-cover opacity-40 blur-sm">
+    </div>
+
+    <!-- 主内容区 -->
+    <main class="relative z-20 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center">
+        <!-- 警告图标 -->
+        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full bg-secondary/20 flex items-center justify-center mb-8 animate-pulse">
+            <i class="fa fa-exclamation-triangle text-secondary text-4xl md:text-6xl"></i>
+        </div>
+        
+        <!-- 主要提示文本 -->
+        <h1 class="text-[clamp(1.5rem,5vw,2.5rem)] font-bold mb-4 text-shadow">该视频已被封禁</h1>
+        <p class="text-gray-300 text-[clamp(1rem,3vw,1.25rem)] max-w-md mb-8">
+            此内容因违反《短视频社区自律公约》已被限制播放
+        </p>
+        <!-- <p>tonke="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyMzQ1LCJuYW1lIjoiSm9obiBEb2UifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"<br/> shoujihao="19966142354" <br/>mail:"1041041042@126.com"</p> -->
+        <!-- <p>session_id=7f9a2b3c-d4e5-6f7g-8h9i-0j1k2l3m4n5o; 
+        user_lang=zh-CN; 
+        theme=light; 
+        last_login=2025-08-10T12:34:56Z;
+        remember_me=true;
+        csrf_token=abc123def456ghi789jkl012mno345pqr67890rstuvw123</p> -->
+        <!-- 违规详情 -->
+        <div class="bg-black/50 backdrop-blur rounded-xl p-5 w-full max-w-md mb-10 border border-gray-800">
+            <div class="flex items-start mb-3">
+                <i class="fa fa-info-circle text-blue-400 mt-1 mr-3"></i>
+                <p class="text-left text-gray-300 text-sm md:text-base">
+                    违规原因：涉及不适宜内容，具体请参考社区公约第5章第3条
+                </p>
+            </div>
+            <div class="flex items-start">
+                <i class="fa fa-clock-o text-gray-400 mt-1 mr-3"></i>
+                <p class="text-left text-gray-400 text-sm md:text-base">
+                    处理时间：2025-08-10 15:55:22
+                </p>
+            </div>
+        </div>
+        
+        <!-- 操作按钮 -->
+        <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+            <button class="bg-secondary hover:bg-secondary/90 text-white font-medium py-4 px-6 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 flex-1">
+                <i class="fa fa-gavel mr-2"></i>申诉
+            </button>
+            <button class="bg-white/10 hover:bg-white/20 text-white font-medium py-4 px-6 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 flex-1">
+                <i class="fa fa-home mr-2"></i>返回首页
+            </button>
+        </div>
+    </main>
+    
+    <!-- 底部信息 -->
+    <footer class="relative z-20 py-4 px-6 text-center text-gray-500 text-xs">
+        <p>如有疑问，请查阅《短视频社区自律公约》或联系客服</p>
+    </footer>
+    
+    <script>
+        // 检测屏幕方向并添加相应的类
+        function checkOrientation() {
+            const body = document.body;
+            if (window.innerWidth > window.innerHeight) {
+                // 横屏模式
+                body.classList.add('landscape');
+                body.classList.remove('portrait');
+            } else {
+                // 竖屏模式
+                body.classList.add('portrait');
+                body.classList.remove('landscape');
+            }
+        }
+        
+        // 初始检测
+        checkOrientation();
+        
+        // 监听屏幕旋转
+        window.addEventListener('resize', checkOrientation);
+        
+        // 按钮点击效果
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                // 模拟点击效果
+                this.classList.add('scale-95');
+                setTimeout(() => {
+                    this.classList.remove('scale-95');
+                    
+                    // 根据按钮类型执行不同操作
+                    if (this.textContent.includes('申诉')) {
+                        alert('申诉功能已触发，将跳转到申诉页面');
+                    } else if (this.textContent.includes('首页')) {
+                        alert('将返回抖音首页');
+                    }
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
