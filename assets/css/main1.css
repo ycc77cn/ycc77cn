@@ -34,7 +34,7 @@
             - 若想让图片在渐变之上，互换顺序即可
             */
             background-image: 
-                url("img/壁纸.png"), /* 电脑端图片（替换成你的URL） */
+                url("img/image.png"), /* 电脑端图片（替换成你的URL） */
                 linear-gradient(rgba(51, 51, 51, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(51, 51, 51, 0.1) 1px, transparent 1px);
             
@@ -57,7 +57,7 @@
         @media (max-width: 768px) {
             body {
                 background-image: 
-                    url("img/壁纸.png"), /* 替换成手机端图片URL */
+                    url("img/image.png"), /* 替换成手机端图片URL */
                     linear-gradient(rgba(51, 51, 51, 0.1) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(51, 51, 51, 0.1) 1px, transparent 1px);
                 /* 手机端可单独调整自适应规则（若与电脑端不同），示例： */
