@@ -135,8 +135,8 @@
             background-size: 20px 100%;
 
             /* 2. 磨砂核心：blur(8px) 是模糊半径，数值越大磨砂越明显 */
-            backdrop-filter: blur(8px); 
-            -webkit-backdrop-filter: blur(8px); /* 兼容 Safari 浏览器 */
+            backdrop-filter: blur(5px); 
+            -webkit-backdrop-filter: blur(5px); /* 兼容 Safari 浏览器 */
 
             /* 保留原有边框、阴影、定位等样式 */
             border-bottom: 1px solid var(--accent-blue);
@@ -926,28 +926,22 @@
             }
         }
         /* 底部状态栏 - 赛博朋克风格强化 */
-.footer {
-  /* 赛博朋克核心深色背景 + 噪点纹理 */
-  background: #0a0a0f;
-  background-image: 
-    /* 网格纹理 - 增强科技感 */
-    linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(rgba(255, 0, 240, 0.05) 1px, transparent 1px),
-    /* 噪点纹理 - 增加复古电子感 */
-    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px, 40px 40px, 10px 10px;
-  padding: 1.5rem 2rem;
-  /* 霓虹渐变边框 - 蓝粉撞色 */
-  border-top: 1px solid;
-  border-image: linear-gradient(90deg, #00f0ff, #ff00f0, #00f0ff) 1;
-  margin-top: 3rem;
-  position: relative;
-  z-index: 10;
-  /* 底部发光条带 */
-  box-shadow: 0 -2px 15px rgba(0, 240, 255, 0.2);
-  /* 背景缓慢滚动动画 */
-  animation: bgScroll 30s linear infinite;
-}
+        .footer {
+            /* 1. 半透明背景（保留原深色基调，降低不透明度实现通透感） */
+            background: rgba(40, 40, 44, 0.8); /* 替换原 var(--base-darkgray)，建议用 rgba 控制透明 */
+            /* 2. 保留原有的细线条纹理（不影响磨砂效果，增加细节层次） */
+            background-image: linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 10px 10px;
+            /* 3. 磨砂核心属性：backdrop-filter（模糊背景内容，实现毛玻璃效果） */
+            backdrop-filter: blur(5px); /* 模糊强度，8-12px 效果最自然，数值越大越模糊 */
+            -webkit-backdrop-filter: blur(5px); /* 兼容 Safari/Chrome 等 WebKit 内核浏览器 */
+            /* 4. 保留原有布局与样式（边框、内边距、定位等不变） */
+            padding: 1rem 2rem;
+            border-top: 1px solid rgba(0, 191, 255, 0.5); /* 边框也加半透明，更贴合磨砂质感 */
+            margin-top: 3rem;
+            position: relative;
+            z-index: 10;
+        }
 
 /* 背景滚动动画 */
 @keyframes bgScroll {
@@ -962,6 +956,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  background-color: transparent
 }
 
 /* 角落霓虹装饰线条 */
@@ -973,17 +968,20 @@
   height: 2px;
   background: linear-gradient(90deg, transparent, #00f0ff);
   bottom: 10px;
+  background-color: transparent
 }
 
 .footer::before {
   left: 2rem;
   box-shadow: 0 0 10px #00f0ff, 0 0 20px rgba(0, 240, 255, 0.5);
+  background-color: transparent
 }
 
 .footer::after {
   right: 2rem;
   background: linear-gradient(90deg, #ff00f0, transparent);
   box-shadow: 0 0 10px #ff00f0, 0 0 20px rgba(255, 0, 240, 0.5);
+  background-color: transparent
 }
 
 /* 赛博朋克风格返回顶部按钮 */
@@ -1060,6 +1058,7 @@
   );
   box-shadow: 0 0 10px #00f0ff, 0 0 20px rgba(0, 240, 255, 0.3);
   animation: glowShift 8s ease-in-out infinite;
+  background-color: transparent
 }
 
 @keyframes glowShift {
@@ -1183,8 +1182,8 @@
             background-size: 20px 100%;
 
             /* 2. 磨砂核心：blur(8px) 是模糊半径，数值越大磨砂越明显 */
-            backdrop-filter: blur(8px); 
-            -webkit-backdrop-filter: blur(8px); /* 兼容 Safari 浏览器 */
+            backdrop-filter: blur(5px); 
+            -webkit-backdrop-filter: blur(5px); /* 兼容 Safari 浏览器 */
 
             /* 保留原有边框、阴影、定位等样式 */
             border-bottom: 1px solid var(--accent-blue);
@@ -1288,7 +1287,7 @@
 
         .announcement {
             background: var(--acrylic-bg);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(5px);
             border-radius: 8px;
             padding: 2rem;
             margin: 2rem 0;
@@ -1399,12 +1398,29 @@
         }
 
         /* 底部状态栏 */
-        .footer {
+        /* .footer {
             background: var(--base-darkgray);
             background-image: linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
             background-size: 10px 10px;
             padding: 1rem 2rem;
             border-top: 1px solid var(--neon-blue);
+            margin-top: 3rem;
+            position: relative;
+            z-index: 10;*/
+            /* background-color: transparent */
+        /* }  */
+        .footer {
+            /* 1. 半透明背景（保留原深色基调，降低不透明度实现通透感） */
+            background: rgba(40, 40, 44, 0.8); /* 替换原 var(--base-darkgray)，建议用 rgba 控制透明 */
+            /* 2. 保留原有的细线条纹理（不影响磨砂效果，增加细节层次） */
+            background-image: linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 10px 10px;
+            /* 3. 磨砂核心属性：backdrop-filter（模糊背景内容，实现毛玻璃效果） */
+            backdrop-filter: blur(5px); /* 模糊强度，8-12px 效果最自然，数值越大越模糊 */
+            -webkit-backdrop-filter: blur(5px); /* 兼容 Safari/Chrome 等 WebKit 内核浏览器 */
+            /* 4. 保留原有布局与样式（边框、内边距、定位等不变） */
+            padding: 1rem 2rem;
+            border-top: 1px solid rgba(0, 191, 255, 0.5); /* 边框也加半透明，更贴合磨砂质感 */
             margin-top: 3rem;
             position: relative;
             z-index: 10;
@@ -1416,6 +1432,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            /* background-color: transparent */
         }
 
         .back-to-top {
@@ -1501,6 +1518,7 @@
         /* 为霓虹边框添加闪烁效果 */
         .navbar, .announcement, .footer {
             animation: neon-pulse 3s infinite;
+            /* background-color: transparent */
         }
 
         /* 滚动动画 */
