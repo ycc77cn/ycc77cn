@@ -27,14 +27,65 @@
             min-height: 100vh;
             overflow-x: hidden;
         } */
-        body {
+         body {
+            background-color: var(--base-black);
+            /* ！！修改：仅保留渐变（原图片移到伪元素中，避免滤镜影响文字） */
+            background-image: 
+                linear-gradient(rgba(12, 12, 12, 0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(51, 51, 51, 0.1) 1px, transparent 1px);
+            
+            /* 渐变的自适应属性（保持不变） */
+            background-size: 20px 20px, 20px 20px;
+            background-repeat: repeat; /* 渐变需要重复，原代码可补充此属性 */
+            
+            color: var(--text-color);
+            position: relative; /* 必须保留：伪元素定位的参考 */
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ！！新增伪元素：单独承载背景图，仅对图片生效滤镜 */
+        body::before {
+            content: ""; /* 伪元素必须有content */
+            position: absolute; /* 脱离文档流，覆盖整个body */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* 放在最下层（低于渐变和文字） */
+            
+            /* 原背景图的属性（迁移到伪元素） */
+            background-image: url("https://pic1.imgdb.cn/item/67837273d0e0a243d4f399ff.jpg"); /* 电脑端图片URL */
+            background-size: cover; /* 覆盖容器 */
+            background-position: center center; /* 居中 */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* 滚动时固定（保持原需求） */
+            
+            /* ！！核心效果：调暗 + 模糊 */
+            filter: brightness(0.6) blur(8px); /* 可按需调整数值 */
+            /* brightness(0.6)：亮度60%（值越小越暗，范围0~1）；blur(8px)：模糊8px（值越大越模糊） */
+        }
+
+        /* 3. 媒体查询：手机端（单独替换伪元素的图片） */
+        @media (max-width: 768px) {
+            body::before {
+                /* ！！修改：手机端图片URL */
+                background-image: url("https://pic1.imgdb.cn/item/67837273d0e0a243d4f399ff.jpg");
+                /* 手机端可单独调整滤镜（示例：稍弱的模糊，更暗的亮度） */
+                /* filter: brightness(0.5) blur(5px); */
+            }
+            
+            /* 渐变属性若需调整，可在此处补充（如手机端缩小网格间距） */
+            /* body { background-size: 15px 15px, 15px 15px; } */
+        }
+        /* body {
             background-color: var(--base-black);
             /* 1. 背景层叠顺序：先写的在下层，后写的在上层 
             - 电脑端背景图（下层）→ 原有网格渐变（上层）
             - 若想让图片在渐变之上，互换顺序即可
             */
             background-image: 
-                url("img/image.svg"), /* 电脑端图片（替换成你的URL） */
+                url("img/image.jpg"), /* 电脑端图片（替换成你的URL） */
                 linear-gradient(rgba(51, 51, 51, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(51, 51, 51, 0.1) 1px, transparent 1px);
             
@@ -57,13 +108,13 @@
         @media (max-width: 768px) {
             body {
                 background-image: 
-                    url("img/image.svg"), /* 替换成手机端图片URL */
+                    url("img/image.jpg"), /* 替换成手机端图片URL */
                     linear-gradient(rgba(51, 51, 51, 0.1) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(51, 51, 51, 0.1) 1px, transparent 1px);
                 /* 手机端可单独调整自适应规则（若与电脑端不同），示例： */
                 /* background-size: contain, 20px 20px, 20px 20px; */
             }
-        }
+        } */
 
         /* 网格点动画 */
         body::before {

@@ -14,6 +14,7 @@
 
 </head>
 <body>
+    <!-- <script src="assets/js/main.js"></script> -->
     <!-- 悬浮装饰图形 -->
     <!-- <div class="floating-shape triangle" style="top: 20%; left: 5%; animation-delay: 0s;"></div> -->
     <!-- <div class="floating-shape hexagon" style="top: 60%; left: 90%; animation-delay: 2s;"></div> -->
@@ -33,7 +34,13 @@
             <a href="https://ycc77.com" class="logo">杨CC 技术录</a>
         </div>
         <div class="hamburger">
-            <i class="fas fa-bars"></i>
+
+            <a href="./index.html" class="nav-link">首页</a>
+            <a href="./penetration.html" class="nav-link">渗透工具</a>
+            <a href="./games.html" class="nav-link">游戏资源</a>
+            <a href="./learning.html" class="nav-link">教程资源</a>
+            <a href="./other_resources.html" class="nav-link">其他资源</a>
+            <a href="https://ycc77.com" class="logo">杨CC 技术录</a>
         </div>
     </nav>
     
@@ -144,47 +151,6 @@
     </footer>
 
     <script>
-        // 创建更多随机悬浮图形
-        function createFloatingShapes() {
-            const shapesCount = 6;
-            const container = document.body;
-            
-            for (let i = 0; i < shapesCount; i++) {
-                const shape = document.createElement('div');
-                const isTriangle = Math.random() > 0.5;
-                
-                if (isTriangle) {
-                    shape.classList.add('floating-shape', 'triangle');
-                    if (Math.random() > 0.5) {
-                        shape.style.transform = 'rotate(180deg)';
-                    }
-                } else {
-                    shape.classList.add('floating-shape', 'hexagon');
-                }
-                
-                // 随机位置和大小
-                const size = Math.random() * 100 + 20;
-                shape.style.width = isTriangle ? '0' : `${size}px`;
-                shape.style.height = isTriangle ? '0' : `${size * 0.58}px`;
-                if (isTriangle) {
-                    shape.style.borderLeftWidth = `${size/2}px`;
-                    shape.style.borderRightWidth = `${size/2}px`;
-                    shape.style.borderBottomWidth = `${size}px`;
-                }
-                
-                shape.style.top = `${Math.random() * 100}%`;
-                shape.style.left = `${Math.random() * 100}%`;
-                shape.style.animationDelay = `${Math.random() * 5}s`;
-                
-                // 随机霓虹色
-                const colors = ['var(--neon-blue)', 'var(--neon-pink)', 'var(--neon-purple)'];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                shape.style.borderColor = isTriangle ? `transparent transparent ${color} transparent` : color;
-                shape.style.boxShadow = `0 0 15px ${color}80`;
-                
-                container.appendChild(shape);
-            }
-        }
 
         // 处理导航栏汉堡图标点击
         document.querySelector('.hamburger').addEventListener('click', () => {
@@ -222,7 +188,6 @@
         });
 
         // 页面加载完成后创建悬浮图形
-        window.addEventListener('load', createFloatingShapes);
 
         // 为链接添加点击动画效果
         document.querySelectorAll('a').forEach(link => {

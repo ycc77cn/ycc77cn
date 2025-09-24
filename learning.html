@@ -17,7 +17,6 @@
     <!-- <div class="floating-shape" style="width: 150px; height: 150px; top: 10%; left: 5%; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"></div>
     <div class="floating-shape" style="width: 100px; height: 100px; top: 60%; right: 10%; border-radius: 50%;"></div>
     <div class="floating-shape" style="width: 120px; height: 80px; bottom: 20%; left: 20%;"></div> -->
-
     <!-- <div class="floating-shape triangle" style="top: 20%; left: 5%; animation-delay: 0s;"></div> -->
     <!-- <div class="floating-shape hexagon" style="top: 60%; left: 90%; animation-delay: 2s;"></div> -->
     <!-- <div class="floating-shape triangle" style="top: 40%; left: 85%; animation-delay: 4s; transform: rotate(180deg);"></div> -->
@@ -34,7 +33,13 @@
             <a href="https://ycc77.com" class="logo">杨CC 技术录</a>
         </div>
         <div class="hamburger">
-            <!-- <i class="fas fa-bars"></i> -->
+
+            <a href="./index.html" class="nav-link">首页</a>
+            <a href="./penetration.html" class="nav-link">渗透工具</a>
+            <a href="./games.html" class="nav-link">游戏资源</a>
+            <a href="./learning.html" class="nav-link">教程资源</a>
+            <a href="./other_resources.html" class="nav-link">其他资源</a>
+            <a href="https://ycc77.com" class="logo">杨CC 技术录</a>
         </div>
     </nav>
 
@@ -541,93 +546,41 @@
         </div>
     </footer>
     <script>
-        // 创建更多随机悬浮形状
-        function createFloatingShapes() {
-            const shapesCount = 5;
-            const container = document.body;
-            
-            for (let i = 0; i < shapesCount; i++) {
-                const shape = document.createElement('div');
-                shape.classList.add('floating-shape');
-                
-                // 随机属性
-                const size = Math.random() * 100 + 50;
-                const top = Math.random() * 100;
-                const left = Math.random() * 100;
-                const delay = Math.random() * 5;
-                
-                shape.style.width = `${size}px`;
-                shape.style.height = `${size}px`;
-                shape.style.top = `${top}%`;
-                shape.style.left = `${left}%`;
-                shape.style.animationDelay = `${delay}s`;
-                
-                // 随机形状
-                const shapeType = Math.floor(Math.random() * 3);
-                switch(shapeType) {
-                    case 0: // 三角形
-                        shape.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
-                        break;
-                    case 1: // 圆形
-                        shape.style.borderRadius = '50%';
-                        break;
-                    case 2: // 矩形
-                        shape.style.width = `${size * 1.5}px`;
-                        break;
-                }
-                
-                container.appendChild(shape);
-            }
-        }
-        
         // 处理导航栏汉堡图标点击
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // 导航栏滚动效果
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            
-            // 滚动时让卡片轻微浮动
-            const cards = document.querySelectorAll('.category-card');
-            cards.forEach((card, index) => {
-                const floatAmount = Math.sin(window.scrollY * 0.001 + index) * 3;
-                card.style.transform = `translateY(${floatAmount}px)`;
-            });
+        // 移动端菜单切换
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // 处理二级分类显示 - 添加故障溶解过渡
+        // 处理二级分类显示
         document.querySelectorAll('.show-subcategory').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = btn.getAttribute('href');
-                const allContents = document.querySelectorAll('.subcategory-content');
-                const targetElement = document.querySelector(targetId);
                 
-                // 先隐藏所有内容并添加故障效果
-                allContents.forEach(content => {
+                // 添加故障过渡效果
+                document.querySelectorAll('.subcategory-content').forEach(content => {
                     if (content.style.display === 'block') {
+                        content.style.animation = 'none';
+                        content.offsetHeight; // 触发重绘
                         content.style.animation = 'glitchOut 0.5s forwards';
                         setTimeout(() => {
                             content.style.display = 'none';
-                            content.style.animation = '';
                         }, 500);
                     }
                 });
                 
-                // 显示目标内容并添加故障进入效果
+                // 显示目标内容
                 setTimeout(() => {
+                    const targetElement = document.querySelector(targetId);
                     targetElement.style.display = 'block';
-                    targetElement.style.animation = 'glitchIn 0.8s forwards';
-                    setTimeout(() => {
-                        targetElement.style.animation = '';
-                    }, 800);
+                    targetElement.style.animation = 'none';
+                    targetElement.offsetHeight; // 触发重绘
+                    targetElement.style.animation = 'glitchIn 0.5s forwards, fadeIn 0.8s ease-out';
                     
                     // 平滑滚动到目标位置
                     targetElement.scrollIntoView({ 
@@ -637,100 +590,118 @@
                 }, 500);
             });
         });
-
-        // 添加故障动画样式
+        
+        // 监听滚动事件，添加导航栏效果
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.add('scrolled');
+            setTimeout(() => {
+                navbar.classList.remove('scrolled');
+            }, 2000);
+        });
+        
+        // 添加故障进入和退出动画
         const style = document.createElement('style');
         style.textContent = `
-            @keyframes glitchOut {
-                0% { opacity: 1; transform: translate(0); }
-                50% { opacity: 0.5; transform: translate(-5px, 3px) scale(0.98); filter: blur(2px); }
-                100% { opacity: 0; transform: translate(10px, -5px) scale(0.9); filter: blur(5px); }
-            }
-            
             @keyframes glitchIn {
-                0% { opacity: 0; transform: translate(10px, -5px) scale(0.9); filter: blur(5px); }
-                50% { opacity: 0.5; transform: translate(-5px, 3px) scale(0.98); filter: blur(2px); }
-                100% { opacity: 1; transform: translate(0); }
+                0% { transform: translateX(-5px) skewX(5deg); opacity: 0; }
+                20% { transform: translateX(5px) skewX(-5deg); }
+                40% { transform: translateX(-3px) skewX(3deg); }
+                60% { transform: translateX(3px) skewX(-3deg); }
+                80% { transform: translateX(-2px) skewX(2deg); }
+                100% { transform: translateX(0) skewX(0); opacity: 1; }
             }
             
-            /* 网格点闪烁动画 */
-            @keyframes gridPulse {
-                0%, 100% { opacity: 0.2; }
-                50% { opacity: 0.8; }
+            @keyframes glitchOut {
+                0% { transform: translateX(0) skewX(0); opacity: 1; }
+                20% { transform: translateX(-2px) skewX(2deg); }
+                40% { transform: translateX(3px) skewX(-3deg); }
+                60% { transform: translateX(-3px) skewX(3deg); }
+                80% { transform: translateX(5px) skewX(-5deg); }
+                100% { transform: translateX(-5px) skewX(5deg); opacity: 0; }
             }
         `;
         document.head.appendChild(style);
-
-        // 初始化
-        window.addEventListener('load', () => {
-            createFloatingShapes();
-            
-            // 创建随机网格点
-            const body = document.body;
-            const gridPoints = 30;
-            for (let i = 0; i < gridPoints; i++) {
-                const point = document.createElement('div');
-                point.style.position = 'absolute';
-                point.style.width = '2px';
-                point.style.height = '2px';
-                point.style.backgroundColor = ['var(--neon-blue)', 'var(--neon-pink)', 'var(--neon-purple)'][Math.floor(Math.random() * 3)];
-                point.style.left = `${Math.random() * 100}%`;
-                point.style.top = `${Math.random() * 100}%`;
-                point.style.animation = `gridPulse ${Math.random() * 5 + 3}s infinite`;
-                point.style.animationDelay = `${Math.random() * 3}s`;
-                point.style.pointerEvents = 'none';
-                point.style.zIndex = '0';
-                body.appendChild(point);
-            }
-        });
+        
     </script>
     <script>
-        // 创建更多随机悬浮图形
-        function createFloatingShapes() {
-            const shapesCount = 6;
-            const container = document.body;
-            
-            for (let i = 0; i < shapesCount; i++) {
-                const shape = document.createElement('div');
-                const isTriangle = Math.random() > 0.5;
-                
-                if (isTriangle) {
-                    shape.classList.add('floating-shape', 'triangle');
-                    if (Math.random() > 0.5) {
-                        shape.style.transform = 'rotate(180deg)';
-                    }
-                } else {
-                    shape.classList.add('floating-shape', 'hexagon');
-                }
-                
-                // 随机位置和大小
-                const size = Math.random() * 30 + 20;
-                shape.style.width = isTriangle ? '0' : `${size}px`;
-                shape.style.height = isTriangle ? '0' : `${size * 0.58}px`;
-                if (isTriangle) {
-                    shape.style.borderLeftWidth = `${size/2}px`;
-                    shape.style.borderRightWidth = `${size/2}px`;
-                    shape.style.borderBottomWidth = `${size}px`;
-                }
-                
-                shape.style.top = `${Math.random() * 100}%`;
-                shape.style.left = `${Math.random() * 100}%`;
-                shape.style.animationDelay = `${Math.random() * 5}s`;
-                
-                // 随机霓虹色
-                const colors = ['var(--neon-blue)', 'var(--neon-pink)', 'var(--neon-purple)'];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                shape.style.borderColor = isTriangle ? `transparent transparent ${color} transparent` : color;
-                shape.style.boxShadow = `0 0 15px ${color}80`;
-                
-                container.appendChild(shape);
-            }
-        }
-
-        // 处理导航栏汉堡图标点击
+       // 处理导航栏汉堡图标点击
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
+
+        // 移动端菜单切换
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // 处理二级分类显示
+        document.querySelectorAll('.show-subcategory').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = btn.getAttribute('href');
+                
+                // 添加故障过渡效果
+                document.querySelectorAll('.subcategory-content').forEach(content => {
+                    if (content.style.display === 'block') {
+                        content.style.animation = 'none';
+                        content.offsetHeight; // 触发重绘
+                        content.style.animation = 'glitchOut 0.5s forwards';
+                        setTimeout(() => {
+                            content.style.display = 'none';
+                        }, 500);
+                    }
+                });
+                
+                // 显示目标内容
+                setTimeout(() => {
+                    const targetElement = document.querySelector(targetId);
+                    targetElement.style.display = 'block';
+                    targetElement.style.animation = 'none';
+                    targetElement.offsetHeight; // 触发重绘
+                    targetElement.style.animation = 'glitchIn 0.5s forwards, fadeIn 0.8s ease-out';
+                    
+                    // 平滑滚动到目标位置
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 500);
+            });
+        });
+        
+        // 监听滚动事件，添加导航栏效果
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.add('scrolled');
+            setTimeout(() => {
+                navbar.classList.remove('scrolled');
+            }, 2000);
+        });
+        
+        // 添加故障进入和退出动画
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes glitchIn {
+                0% { transform: translateX(-5px) skewX(5deg); opacity: 0; }
+                20% { transform: translateX(5px) skewX(-5deg); }
+                40% { transform: translateX(-3px) skewX(3deg); }
+                60% { transform: translateX(3px) skewX(-3deg); }
+                80% { transform: translateX(-2px) skewX(2deg); }
+                100% { transform: translateX(0) skewX(0); opacity: 1; }
+            }
+            
+            @keyframes glitchOut {
+                0% { transform: translateX(0) skewX(0); opacity: 1; }
+                20% { transform: translateX(-2px) skewX(2deg); }
+                40% { transform: translateX(3px) skewX(-3deg); }
+                60% { transform: translateX(-3px) skewX(3deg); }
+                80% { transform: translateX(5px) skewX(-5deg); }
+                100% { transform: translateX(-5px) skewX(5deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
 
         // 导航栏滚动效果
         window.addEventListener('scroll', () => {
@@ -762,8 +733,6 @@
             fadeInObserver.observe(element);
         });
 
-        // 页面加载完成后创建悬浮图形
-        window.addEventListener('load', createFloatingShapes);
 
         // 为链接添加点击动画效果
         document.querySelectorAll('a').forEach(link => {

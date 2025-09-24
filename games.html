@@ -32,7 +32,13 @@
             <a href="https://ycc77.com" class="logo">杨CC 技术录</a>
         </div>
         <div class="hamburger">
-            <!-- <i class="fas fa-bars"></i> -->
+
+            <a href="./index.html" class="nav-link">首页</a>
+            <a href="./penetration.html" class="nav-link">渗透工具</a>
+            <a href="./games.html" class="nav-link">游戏资源</a>
+            <a href="./learning.html" class="nav-link">教程资源</a>
+            <a href="./other_resources.html" class="nav-link">其他资源</a>
+            <a href="https://ycc77.com" class="logo">杨CC 技术录</a>
         </div>
     </nav>
 
@@ -164,48 +170,13 @@
         </div>
     </footer>
     <script>
-                // 处理导航栏汉堡图标点击
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-        // 创建更多随机悬浮形状
-        function createFloatingShapes() {
-            const shapesCount = 5;
-            const container = document.body;
-            
-            for (let i = 0; i < shapesCount; i++) {
-                const shape = document.createElement('div');
-                shape.classList.add('floating-shape');
-                
-                // 随机尺寸
-                const size = Math.random() * 100 + 50;
-                shape.style.width = `${size}px`;
-                shape.style.height = `${size}px`;
-                
-                // 随机位置
-                shape.style.top = `${Math.random() * 100}%`;
-                shape.style.left = `${Math.random() * 100}%`;
-                
-                // 随机旋转
-                shape.style.transform = `rotate(${Math.random() * 360}deg)`;
-                
-                // 随机形状
-                if (Math.random() > 0.7) {
-                    shape.style.borderRadius = '50%';
-                }
-                
-                // 随机动画延迟
-                shape.style.animationDelay = `${Math.random() * 5}s`;
-                
-                container.appendChild(shape);
-            }
-        }
-        // 移动端菜单切换
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
         // 处理导航栏汉堡图标点击
         document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // 移动端菜单切换
+        document.querySelector('.hamburger').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
@@ -276,56 +247,85 @@
         `;
         document.head.appendChild(style);
         
-        // 页面加载完成后创建悬浮形状
-        window.addEventListener('load', createFloatingShapes);
     </script>
     <script>
-        // 创建更多随机悬浮图形
-        function createFloatingShapes() {
-            const shapesCount = 6;
-            const container = document.body;
-            
-            for (let i = 0; i < shapesCount; i++) {
-                const shape = document.createElement('div');
-                const isTriangle = Math.random() > 0.5;
-                
-                if (isTriangle) {
-                    shape.classList.add('floating-shape', 'triangle');
-                    if (Math.random() > 0.5) {
-                        shape.style.transform = 'rotate(180deg)';
-                    }
-                } else {
-                    shape.classList.add('floating-shape', 'hexagon');
-                }
-                
-                // 随机位置和大小
-                const size = Math.random() * 30 + 20;
-                shape.style.width = isTriangle ? '0' : `${size}px`;
-                shape.style.height = isTriangle ? '0' : `${size * 0.58}px`;
-                if (isTriangle) {
-                    shape.style.borderLeftWidth = `${size/2}px`;
-                    shape.style.borderRightWidth = `${size/2}px`;
-                    shape.style.borderBottomWidth = `${size}px`;
-                }
-                
-                shape.style.top = `${Math.random() * 100}%`;
-                shape.style.left = `${Math.random() * 100}%`;
-                shape.style.animationDelay = `${Math.random() * 5}s`;
-                
-                // 随机霓虹色
-                const colors = ['var(--neon-blue)', 'var(--neon-pink)', 'var(--neon-purple)'];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                shape.style.borderColor = isTriangle ? `transparent transparent ${color} transparent` : color;
-                shape.style.boxShadow = `0 0 15px ${color}80`;
-                
-                container.appendChild(shape);
-            }
-        }
-
-        // 处理导航栏汉堡图标点击
+       // 处理导航栏汉堡图标点击
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
+
+        // 移动端菜单切换
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // 处理二级分类显示
+        document.querySelectorAll('.show-subcategory').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = btn.getAttribute('href');
+                
+                // 添加故障过渡效果
+                document.querySelectorAll('.subcategory-content').forEach(content => {
+                    if (content.style.display === 'block') {
+                        content.style.animation = 'none';
+                        content.offsetHeight; // 触发重绘
+                        content.style.animation = 'glitchOut 0.5s forwards';
+                        setTimeout(() => {
+                            content.style.display = 'none';
+                        }, 500);
+                    }
+                });
+                
+                // 显示目标内容
+                setTimeout(() => {
+                    const targetElement = document.querySelector(targetId);
+                    targetElement.style.display = 'block';
+                    targetElement.style.animation = 'none';
+                    targetElement.offsetHeight; // 触发重绘
+                    targetElement.style.animation = 'glitchIn 0.5s forwards, fadeIn 0.8s ease-out';
+                    
+                    // 平滑滚动到目标位置
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 500);
+            });
+        });
+        
+        // 监听滚动事件，添加导航栏效果
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.add('scrolled');
+            setTimeout(() => {
+                navbar.classList.remove('scrolled');
+            }, 2000);
+        });
+        
+        // 添加故障进入和退出动画
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes glitchIn {
+                0% { transform: translateX(-5px) skewX(5deg); opacity: 0; }
+                20% { transform: translateX(5px) skewX(-5deg); }
+                40% { transform: translateX(-3px) skewX(3deg); }
+                60% { transform: translateX(3px) skewX(-3deg); }
+                80% { transform: translateX(-2px) skewX(2deg); }
+                100% { transform: translateX(0) skewX(0); opacity: 1; }
+            }
+            
+            @keyframes glitchOut {
+                0% { transform: translateX(0) skewX(0); opacity: 1; }
+                20% { transform: translateX(-2px) skewX(2deg); }
+                40% { transform: translateX(3px) skewX(-3deg); }
+                60% { transform: translateX(-3px) skewX(3deg); }
+                80% { transform: translateX(5px) skewX(-5deg); }
+                100% { transform: translateX(-5px) skewX(5deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
 
         // 导航栏滚动效果
         window.addEventListener('scroll', () => {
@@ -357,8 +357,6 @@
             fadeInObserver.observe(element);
         });
 
-        // 页面加载完成后创建悬浮图形
-        window.addEventListener('load', createFloatingShapes);
 
         // 为链接添加点击动画效果
         document.querySelectorAll('a').forEach(link => {
