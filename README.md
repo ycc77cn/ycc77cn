@@ -141,6 +141,6 @@
 | 杨CC | 0.11元 |
 
 
-投喂记得备注哦～
-![投喂一下](/assets/css/img/tou.png)
+<!-- 投喂记得备注哦～ -->
+<!-- ![投喂一下](/assets/css/img/tou.png) -->
 
