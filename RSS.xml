@@ -55,14 +55,26 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ycc77.cn/other_resources.html</loc>
-    <lastmod>2024-08-15</lastmod>
+    <loc>https://ycc77.cn/dian_nao_tools.html</loc>
+    <lastmod>2024-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ycc77.cn/penetration.html</loc>
     <lastmod>2024-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ycc77.cn/shou_ji_tools.html</loc>
+    <lastmod>2024-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ycc77.cn/404.html</loc>
+    <lastmod>2024-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
