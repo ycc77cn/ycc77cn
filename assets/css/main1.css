@@ -9,6 +9,15 @@
             --grid-color: #333333;
         }
 
+  img {
+    width: auto;
+    height: auto;
+    max-width: 100px; /* 最大宽度不超过50px */
+      /* 关键：转为块级元素，才能用 margin 水平居中 */
+    display: block;
+    /* 水平居中：左右 margin 自动分配（上下 margin 为 0，可按需调整） */
+    margin: 0 auto;
+  }
         * {
             margin: 0;
             padding: 0;
@@ -230,7 +239,7 @@
         }
 
         .logo::after {
-            content: '杨CC资源分享站';
+            /* content: '杨CC资源分享站'; */
             position: absolute;
             top: 0;
             left: 1px;
