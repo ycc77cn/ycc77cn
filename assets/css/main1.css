@@ -64,7 +64,7 @@
             z-index: -1; /* 放在最下层（低于渐变和文字） */
             
             /* 原背景图的属性（迁移到伪元素） */
-            background-image: url("https://pic1.imgdb.cn/item/67837273d0e0a243d4f399ff.jpg"); /* 电脑端图片URL */
+            background-image: url("https://pic1.imgdb.cn/item/68f1bf07c5157e1a887ac2b1.png"); /* 电脑端图片URL */
             background-size: cover; /* 覆盖容器 */
             background-position: center center; /* 居中 */
             background-repeat: no-repeat;
@@ -79,7 +79,7 @@
         @media (max-width: 768px) {
             body::before {
                 /* ！！修改：手机端图片URL */
-                background-image: url("https://pic1.imgdb.cn/item/67837273d0e0a243d4f399ff.jpg");
+                background-image: url("https://pic1.imgdb.cn/item/68f1bf07c5157e1a887ac2b1.png");
                 /* 手机端可单独调整滤镜（示例：稍弱的模糊，更暗的亮度） */
                 /* filter: brightness(0.5) blur(5px); */
             }
@@ -87,7 +87,7 @@
             /* 渐变属性若需调整，可在此处补充（如手机端缩小网格间距） */
             /* body { background-size: 15px 15px, 15px 15px; } */
         }
-        /* body {
+         body {
             background-color: var(--base-black);
             /* 1. 背景层叠顺序：先写的在下层，后写的在上层 
             - 电脑端背景图（下层）→ 原有网格渐变（上层）
