@@ -342,6 +342,11 @@
         <span class="meta">${e.subTitle ? e.catTitle + ' / ' + e.subTitle : (e.catTitle || '')}</span>
       `;
       row.addEventListener('click', () => {
+        // 点击后关闭悬浮描述并清除计时器
+        if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
+        const existed = document.querySelector('.search-tooltip');
+        if (existed && existed.parentNode) existed.parentNode.removeChild(existed);
+        // 保留原有跳转功能
         goToResult(e);
       });
       // 悬停提示（100ms 延时显示 description），固定定位到视口，确保不被容器裁剪
