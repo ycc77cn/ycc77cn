@@ -192,9 +192,9 @@ body {
 .site-footer { padding: var(--space-m); text-align: center; color: var(--muted); border-top: 1px solid var(--border); background: var(--glass); backdrop-filter: blur(var(--blur)); }
 
 /* 全局背景图（覆盖默认渐变），自适应窗口并固定 */
-body {
+/* body {
   background: url('https://pic1.imgdb.cn/item/68f1bf07c5157e1a887ac2b1.png') center center / cover no-repeat fixed;
-}
+} */
 
 /* 响应式 */
 @media (max-width: 900px) { .search-input { width: min(58vw, 360px); } }
