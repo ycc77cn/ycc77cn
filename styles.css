@@ -196,6 +196,23 @@ body {
   background: url('https://pic1.imgdb.cn/item/68f1bf07c5157e1a887ac2b1.png') center center / cover no-repeat fixed;
 } */
 
+/* 移动端：分类条单行横向滚动 */
+@media (max-width: 900px) {
+  .category-bar, #categoryBar,
+  .subcategory-panel, #subcategoryPanel {
+    display: flex;
+    flex-wrap: nowrap;           /* 单行，不换行 */
+    overflow-x: auto;            /* 横向滚动 */
+    overflow-y: hidden;          /* 禁止纵向撑高 */
+    -webkit-overflow-scrolling: touch; /* iOS 惯性滚动 */
+    gap: var(--space-s);
+  }
+  .category-item, .subcategory-item {
+    flex: 0 0 auto;              /* 保持为固定宽度项，便于横向滚动 */
+    white-space: nowrap;         /* 文本不换行，避免增高 */
+  }
+}
+
 /* 响应式 */
 @media (max-width: 900px) { .search-input { width: min(58vw, 360px); } }
 @media (max-width: 620px) { .header-inner { flex-direction: column; align-items: stretch; gap: 10px; } .search-input { width: 100%; } }
