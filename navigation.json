@@ -344,6 +344,38 @@
               "description": "A fast port scanner written in go with a focus on reliability and simplicity. Designed to be used in combination with other tools for attack surface discovery in bug bounties and pentests - projectdiscovery/naabu",
               "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
               "enabled": true
+            },
+            {
+              "id": "site_1761362149107_fxbkayudl",
+              "title": "Ultimate-IP-Domain-Processor: 批量分析 IP 和域名、收集网络相关工具",
+              "href": "https://github.com/lsh4ck/Ultimate-IP-Domain-Processor",
+              "description": "它能接收多种格式的输入（比如单个 IP、IP 段、域名、URL 等），通过自动获取和验证代理池（提升网络请求的稳定性和效率），批量执行一系列网络信息查询任务 —— 包括 IP 反向查询对应的域名、检测域名是否存活（能否通过 HTTP/HTTPS 访问）、查询域名的权重（如百度权重）等，并将结果整理输出（存活域名、详细信息表格等）。\n简单说，它是一个用于批量分析 IP 和域名、收集网络相关信息的工具，适用于网络探测、域名筛选、信息搜集等场景。",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761363196125_5fvvofpdx",
+              "title": "ExploitDB 搜索工具（搜索漏洞工具）",
+              "href": "https://github.com/ctkqiang/exploitdb",
+              "description": "一款基于 Java 构建的轻量级命令行工具（CLI），用于从 Exploit-DB 数据库中抓取、解析、展示并导出漏洞利用信息。  本工具专为安全研究员、渗透测试人员以及开发者设计，无需依赖浏览器，即可在终端中快速检索已公开的漏洞利用（exploit），包括 CVE 编号、漏洞类型、平台分类等核心字段。  工具支持关键词搜索、条件过滤、分页展示，并提供多种格式（如 JSON、CSV 等）的导出能力，可轻松集成到自动化分析流程、CTF 工具链，或用于离线环境下的信息收集与漏洞整理。  无论你是在进行日常安全研究，还是构建自己的私有漏洞情报库，这款工具都能为你提供一个快速、高效、极简的 Exploit-DB 数据访问接口。 - ctkqiang/exploitdb",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761363341927_2luq1lyw6",
+              "title": "GoSSRF: 一款用Go语言编写的SSRF漏洞检测工具，",
+              "href": "https://github.com/dragonkeep/GoSSRF",
+              "description": "一款高效、灵活的 SSRF（Server-Side Request Forgery）漏洞检测工具。\n✨ 特性\n🎯 多种扫描模式\n\n内网端口扫描（优先探测高危端口）\n文件读取测试（支持file://、dict://、gopher://等协议）\n云服务元数据接口探测（AWS/GCP/阿里云）\nOOB（Out-of-Band）带外数据检测\n🚀 高性能并发\n\n支持自定义并发线程数\n智能互斥锁保护输出顺序\n高效的payload管理\n🎨 友好的输出\n\n彩色命令行输出（漏洞绿色，错误红色）\n输出文件与命令行内容完全一致\n简洁清晰的扫描进度\n🔧 灵活配置\n\n支持自定义HTTP方法（GET/POST/PUT等）\n支持自定义HTTP Headers（Burp格式）\n支持自定义Payload字典\n支持CIDR网段扫描",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761363588259_4a3norazt",
+              "title": "AppInfoScanner: 一款移动端的信息收集工具",
+              "href": "https://github.com/kelvinBen/AppInfoScanner",
+              "description": "一款适用于以HW行动/红队/渗透测试团队为场景的移动端(Android、iOS、WEB、H5、静态网站)信息收集扫描工具，可以帮助渗透测试工程师、攻击队成员、红队成员快速收集到移动端或者静态WEB站点中关键的资产信息并提供基本的信息输出,如：Title、Domain、CDN、指纹信息、状态信息等。 - kelvinBen/AppInfoScanner",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
             }
           ]
         },
@@ -545,6 +577,14 @@
               "href": "https://fofa.info/",
               "description": "FOFA 是白帽汇推出的一款网络空间搜索引擎，它通过进行网络空间测绘，能够帮助研究人员或者企业迅速进行网络资产匹配，例如进行漏洞影响范围分析、应用分布统计、应用流行度排名统计等。",
               "icon": "/assets/favicon_1761111415032.ico",
+              "enabled": true
+            },
+            {
+              "id": "site_1761363019297_hhw4f4hqi",
+              "title": "小众的边缘资产收集方式。",
+              "href": "https://instantdomainsearch.com/domain-extensions",
+              "description": "聚焦在域名。但不是子域名，而是域名TLD的信息收集工具。\n访问之后，已经被注册的域名显示为红色，这个时候大佬们就可以逐个访问看看有没有新的资产暴露出来了；\n",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
               "enabled": true
             }
           ]
@@ -902,6 +942,46 @@
               "description": "JavaSecLab is a comprehensive Java vulnerability platform｜​ JavaSecLab是一款综合型Java漏洞平台，提供相关漏洞缺陷代码、修复代码、漏洞场景、审计SINK点、安全编码规范，覆盖多种漏洞场景，友好用户交互UI…… - whgojp/JavaSecLab",
               "icon": "/assets/favicon_1761114817203.png",
               "enabled": true
+            },
+            {
+              "id": "site_1761361152758_gmuoxyqaa",
+              "title": "Sirius",
+              "href": "https://github.com/SiriusScan/Sirius",
+              "description": "Sirius Scan是业内首款真正开源的通用漏洞扫描工具，靠信息安全社区的集体技术力，功能上有超越部分商业产品的潜力。它的核心框架含四大关键模块：漏洞数据库、网络扫描引擎、代理发现机制和自定义评估分析，下文会详解其安装与核心功能，帮安全从业者快速上手。",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761361488445_ig2mxan3u",
+              "title": "OA漏洞利用工具",
+              "href": "https://github.com/R4gd0ll/I-Wanna-Get-All",
+              "description": "介绍\n集成漏洞系统包括：用友、泛微、蓝凌、万户、致远、通达、帆软、金蝶、金和、红帆、宏景、浪潮、普元、亿赛通、海康威视、飞企互联、大华DSS、jeecg-boot\n\n集成memshell功能：用友NC、用友U8C、亿赛通、帆软channel、jeecgboot注入内存马。\n\n目前集成385漏洞，包括nday、1day（未公开poc）",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761361587698_mmrt5w5sm",
+              "title": "jeecg综合漏洞利用工具",
+              "href": "https://github.com/MInggongK/jeecg-",
+              "description": "jeecg综合漏洞利用工具,程序采用javafx开发,环境JDK 1.8 声明：仅用于授权测试，用户滥用造成的一切后果和作者无关 请遵守法律法规！ 漏洞收录如下：\n\njeecg-boot queryFieldBySql远程命令执行漏洞\n\njeecg-boot testConnection远程命令执行漏洞\n\nJeecgBoot jmreport/loadTableData SSTI模板注入漏洞\n\njeecg-boot-queryTableData-sqli注入漏洞\n\njeecg-boot-getDictItemsByTable-sqli注入漏洞\n\nJeecg-Boot qurestSql-SQL注入漏洞\n\njeecg-boot commonController 任意文件上传漏洞\n\njeecg-boot jmreport任意文件上传漏洞\n\njeecg-boot-querySysUser信息泄露漏洞\n\njeecg-boot-checkOnlyUser信息泄露漏洞\n\njeecg-boot-httptrace信息泄露漏洞\n\njeecg-boot-任意文件下载漏洞\n\njeecg-boot-jeecgFormDemoController漏洞\n\njeecg-boot-v2 P3 Biz Chat任意文件读取漏洞\n\njeecg-boot-v2 sys/duplicate/check注入漏洞\n\njeecg-boot-v2 AviatorScript表达式注入漏洞",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761362290442_1a6m9ztsg",
+              "title": "Nacos漏洞检测专项工具",
+              "href": "https://github.com/charonlight/NacosExploitGUI",
+              "description": "在攻防演练中，Nacos一直是红队攻击的重点目标之一，红队通常需要快速打点，尽快发现系统中的漏洞，并利用它们获取权限。在NacosExploitGUI_v7.0版本中，更新了UI及其各种友好的提示、新增空间测绘功能让打点资产更迅速、修复derby sql注入漏洞在在特殊场景下的编码问题、新增derby sql注入不出网RCE的检测及其利用、 修复配置文件提取接口上限的问题、Jraft Hessian 反序列化漏洞新增自定义group攻击链路、新增自定义注入内存马密码及其路径、新增注入蚁剑内存马、新增命令执行可反弹shell功能等等。",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761364102391_x4r23vwpi",
+              "title": "Frchannel-帆软报表V10 channel反序列漏洞利用工具",
+              "href": "https://github.com/Huang7k/Frchannel",
+              "description": "原工具地址：https://github.com/yecp181/Frchannel\n\n在原工具基础上增加了多种内存马类型，优化了gui\n\n内存马支持类型:\n\nGodzilla(哥斯拉)\nBehinder(冰蝎)\nAntSword(蚁剑)\nNeoreGeorg\nSuo5\n支持HsqlDeserialize、jackson、hibernate、cb反序列化链来进行利用",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
             }
           ]
         },
@@ -1045,6 +1125,14 @@
               "title": "linux后门",
               "href": "https://pan.quark.cn/s/f789004851a2",
               "description": "linux后门",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761363942166_tcv9tru37",
+              "title": "Qscan",
+              "href": "https://github.com/qi4L/qscan",
+              "description": "一个速度极快的内网扫描器，具备端口扫描、协议检测、指纹识别，暴力破解，漏洞探测等功能。支持协议1200+，协议指纹10000+，应用指纹20000+，暴力破解协议10余种",
               "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
               "enabled": true
             }
@@ -1409,6 +1497,14 @@
               "title": "轻量 哈希 \\MD5 计算工具 - hashmyfiles",
               "href": "https://pan.quark.cn/s/02abed1b0c6a",
               "description": "轻量 哈希 \\MD5 计算工具 - hashmyfiles",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761361274563_tt6txz31j",
+              "title": "SafeLine: 一个超级无敌牛逼的开源WAF",
+              "href": "https://github.com/chaitin/SafeLine",
+              "description": "SafeLine 是一款国产的反向代理型  Web 应用防火墙（WAF），部署在 Web 应用与互联网之间，通过过滤、监控和阻断恶意流量，保护你的网站免受攻击，同时防止未授权数据泄露。",
               "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
               "enabled": true
             }
@@ -2263,6 +2359,14 @@
               "description": " ",
               "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
               "enabled": true
+            },
+            {
+              "id": "site_1761360264552_rn05u4a20",
+              "title": "僵尸射击与防御",
+              "href": "https://pan.quark.cn/s/f6d435e3dc2c",
+              "description": "游戏介绍：已更新！是一款横版像素风格的枪战射击游戏。游戏中，玩家将扮演幸存者，抵御入侵的僵尸潮。玩家需边移动边射击，利用多种武器，搭配路障、陷阱等道具来防御僵尸。游戏设有战役和生存等模式，关卡丰富，僵尸类型多样，还支持武器升级与配件改装。其操作简单，物理引擎逼真，能给玩家带来紧张刺激的末日生存体验。解锁使用货币后即可获得大量货币。",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
             }
           ]
         }
@@ -2594,6 +2698,22 @@
               "title": "Kali Linux",
               "href": "https://pan.quark.cn/s/2ef5fa29def2",
               "description": " ",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761362733783_x5elr0d1n",
+              "title": "Win10全栈安全系统",
+              "href": "https://pan.quark.cn/s/0ffb4cf8ee28",
+              "description": "Win10全栈安全系统- 这是一个基于Windows10定制的安全渗透系统，里面包含了数百种黑客常用武器。可以让你省去很多的安装过程。好用爱用。\n物理主机须支持 CPU 虚拟化功能, 否则 WSL Kali 可能无法使用。开启 VMware - 虚拟机设置 - 处理器 - 虚拟化引擎:虚拟化 Intel VT-x/EPT 或 AMD-V/RVI虚拟化 CPU 性能计数器虚拟化 IOMMU(IO 内存管理单元)精简系统自带软件, 美化字体及部分图标, 适度优化;推荐运行环境:VMware: 17.x(建议视情分配图形内存)运行内存: 8 GB固态硬盘: 300 GB",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761362876483_wdyjx4vw1",
+              "title": "Win11 全栈安全武器系统",
+              "href": "https://pan.quark.cn/s/86faeffde724",
+              "description": "这是一个基Windows11安装定制的渗透安全系统，与Windows10安全系统一致。由于工具众多，请参考下述进行安装。（注意：此系统结合了kali）\n物理主机须支持 CPU 虚拟化功能, 否则 WSL Kali 可能无法使用。开启 VMware - 虚拟机设置 - 处理器 - 虚拟化引擎:虚拟化 Intel VT-x/EPT 或 AMD-V/RVI虚拟化 CPU 性能计数器虚拟化 IOMMU(IO 内存管理单元)精简系统自带软件, 美化字体及部分图标, 适度优化;推荐运行环境:VMware: 17.x(建议视情分配图形内存)运行内存: 8 GB固态硬盘: 300 GB",
               "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
               "enabled": true
             }
@@ -4545,6 +4665,14 @@
               "description": " ",
               "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
               "enabled": true
+            },
+            {
+              "id": "site_1761360440188_95vp2bmm2",
+              "title": "囧次元-看动画软件",
+              "href": "https://pan.quark.cn/s/6fff456f7304",
+              "description": "囧次元修复版(1.5.80)动画软件、解锁会员功能、去广告等",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
             }
           ]
         },
@@ -4874,6 +5002,54 @@
               "title": "27 - 趣打印_12_18_4解锁高级版_黑鹰.apk - 一个好用的手机打印工具",
               "href": "https://pan.quark.cn/s/4896ede01f15",
               "description": " ",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761359486527_woelegcwy",
+              "title": "AI扫描王",
+              "href": "https://pan.quark.cn/s/df9516c3880d",
+              "description": "软件介绍：是一款效率办公类软件。它是集AI扫描、AI写作、AI分析等多元功能于一体的专业手机扫描工具。支持图片高清扫描、扫描转表格、文字提取、证件文件扫描等功能，还能拍照计数、扫描测量。此外，该软件全面接入推理大模型DeepSeek-R1，具备AI写作能力，可辅助撰写各种文案，能满足用户工作、生活、学习中的多种需求。解锁会员功能。",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761359582409_ptan38tw5",
+              "title": "配音神器(2.2.24)",
+              "href": "https://pan.quark.cn/s/d5c5e8ef54ef",
+              "description": "已更新！是一款专注于文字转语音的智能语音合成软件。它采用强大的语音合成技术，拥有多达百位以上的智能语音合成机器人，男女声可随意切换。其功能丰富，包括一键语音合成、声音克隆、人声分离等，还有海量真人成品录音可直接导出，以及众多行业广告模板可供选择，操作简单，音质优良，能满足用户多样化的配音需求。仅解锁本地会员功能，手机登录即可。",
+              "icon": "/assets/favicon_1761359557720.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761359635226_nzcyzn5rn",
+              "title": "自助配音",
+              "href": "https://pan.quark.cn/s/76f0fa57d81e",
+              "description": "自助配音(2.0.1)配音软件、解锁会员功能，手机登录即可",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761359776098_moi4943ac",
+              "title": "全球高清街景",
+              "href": "https://pan.quark.cn/s/67269fc7481d",
+              "description": "是一款集成导航功能的安卓地图软件。它覆盖全球大部分地区，用户可在地图上自由选择位置，查看实时街景，进行驾驶或步行导航。软件提供多种地图类型，如高清卫星地图、3D地图等，还具备全球景点VR功能，用户可佩戴VR眼镜360度欣赏美景。此外，它还能为用户推荐知名或网红地点，是出行旅游和虚拟旅游的理想助手。解锁会员功能。",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761359978724_er6tj5q6s",
+              "title": "LocalSend(1.17.0)",
+              "href": "https://pan.quark.cn/s/361d0d270d28",
+              "description": "是一款免费开源的安卓文件传输工具。它支持在同一局域网内的跨平台设备间高速传输文件，无需数据线和互联网连接。可传输照片、视频、文档等多种类型文件，且文件大小无限制。该软件采用加密传输技术，确保数据安全。此外，它还具备通知同步、短信管理、远程控制等功能，操作简单，自动扫描附近设备，方便快捷。免费开源无广告软件。",
+              "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
+              "enabled": true
+            },
+            {
+              "id": "site_1761360349447_v5ojvszju",
+              "title": "叮当牛小说",
+              "href": "https://pan.quark.cn/s/11fcd3129c1c",
+              "description": "叮当牛小说(2.7.4)正版免费小说软件、去广告",
               "icon": "https://pic1.imgdb.cn/item/68f1b8ccc5157e1a887a8c09.png",
               "enabled": true
             }
